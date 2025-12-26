@@ -5,13 +5,27 @@ let roadmapData = null;
 // Загрузка roadmap.json
 async function loadRoadmap() {
     try {
-        const response = await fetch('/data/roadmap.json');
+        // Пробуем разные пути для локальной разработки и GitHub Pages
+        let response = await fetch('data/roadmap.json');
+        if (!response.ok) {
+            response = await fetch('/data/roadmap.json');
+        }
+        if (!response.ok) {
+            // Для GitHub Pages используем относительный путь
+            response = await fetch('./data/roadmap.json');
+        }
+        if (!response.ok) {
+            throw new Error('Файл roadmap.json не найден');
+        }
         roadmapData = await response.json();
         renderRoadmap();
     } catch (error) {
         console.error('Ошибка загрузки плана:', error);
-        document.getElementById('roadmapContainer').innerHTML = 
-            '<p style="color: red;">Ошибка загрузки плана обучения. Проверьте наличие файла data/roadmap.json</p>';
+        const container = document.getElementById('roadmapContainer');
+        if (container) {
+            container.innerHTML = 
+                '<p style="color: red;">Ошибка загрузки плана обучения. Проверьте наличие файла data/roadmap.json</p>';
+        }
     }
 }
 

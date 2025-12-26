@@ -18,7 +18,14 @@ async function loadProgressData() {
 
     // Загрузка roadmap для подсчета общего количества заданий
     try {
-        const response = await fetch('/data/roadmap.json');
+        // Пробуем разные пути для локальной разработки и GitHub Pages
+        let response = await fetch('data/roadmap.json');
+        if (!response.ok) {
+            response = await fetch('/data/roadmap.json');
+        }
+        if (!response.ok) {
+            response = await fetch('./data/roadmap.json');
+        }
         const roadmap = await response.json();
         
         let totalTasks = 0;

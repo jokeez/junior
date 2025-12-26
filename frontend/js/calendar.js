@@ -8,7 +8,17 @@ let currentYear = currentDate.getFullYear();
 // Загрузка roadmap
 async function loadRoadmapForCalendar() {
     try {
-        const response = await fetch('/data/roadmap.json');
+        // Пробуем разные пути для локальной разработки и GitHub Pages
+        let response = await fetch('data/roadmap.json');
+        if (!response.ok) {
+            response = await fetch('/data/roadmap.json');
+        }
+        if (!response.ok) {
+            response = await fetch('./data/roadmap.json');
+        }
+        if (!response.ok) {
+            throw new Error('Файл roadmap.json не найден');
+        }
         roadmapData = await response.json();
         renderCalendar();
     } catch (error) {
