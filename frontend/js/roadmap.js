@@ -5,26 +5,49 @@ let roadmapData = null;
 // Загрузка roadmap.json
 async function loadRoadmap() {
     try {
+        // Определяем базовый путь в зависимости от структуры URL
+        const basePath = window.location.pathname.includes('/pages/') 
+            ? '../data/roadmap.json'  // Если мы в pages/, идем на уровень выше
+            : 'data/roadmap.json';    // Если в корне frontend/
+        
         // Пробуем разные пути для локальной разработки и GitHub Pages
-        let response = await fetch('data/roadmap.json');
-        if (!response.ok) {
-            response = await fetch('/data/roadmap.json');
+        const paths = [
+            basePath,
+            'data/roadmap.json',
+            '/data/roadmap.json',
+            './data/roadmap.json',
+            '../data/roadmap.json',
+            window.location.origin + '/data/roadmap.json'
+        ];
+        
+        let response = null;
+        let lastError = null;
+        
+        for (const path of paths) {
+            try {
+                response = await fetch(path);
+                if (response.ok) {
+                    break;
+                }
+            } catch (e) {
+                lastError = e;
+                continue;
+            }
         }
-        if (!response.ok) {
-            // Для GitHub Pages используем относительный путь
-            response = await fetch('./data/roadmap.json');
+        
+        if (!response || !response.ok) {
+            throw new Error('Файл roadmap.json не найден по путям: ' + paths.join(', '));
         }
-        if (!response.ok) {
-            throw new Error('Файл roadmap.json не найден');
-        }
+        
         roadmapData = await response.json();
         renderRoadmap();
     } catch (error) {
         console.error('Ошибка загрузки плана:', error);
+        console.error('Текущий путь:', window.location.pathname);
         const container = document.getElementById('roadmapContainer');
         if (container) {
             container.innerHTML = 
-                '<p style="color: red;">Ошибка загрузки плана обучения. Проверьте наличие файла data/roadmap.json</p>';
+                '<p style="color: red; padding: 2rem; text-align: center;">Ошибка загрузки плана обучения. Проверьте наличие файла data/roadmap.json<br><small>Путь: ' + window.location.pathname + '</small></p>';
         }
     }
 }

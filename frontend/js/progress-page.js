@@ -18,13 +18,35 @@ async function loadProgressData() {
 
     // Загрузка roadmap для подсчета общего количества заданий
     try {
+        // Определяем базовый путь в зависимости от структуры URL
+        const basePath = window.location.pathname.includes('/pages/') 
+            ? '../data/roadmap.json'  // Если мы в pages/, идем на уровень выше
+            : 'data/roadmap.json';    // Если в корне frontend/
+        
         // Пробуем разные пути для локальной разработки и GitHub Pages
-        let response = await fetch('data/roadmap.json');
-        if (!response.ok) {
-            response = await fetch('/data/roadmap.json');
+        const paths = [
+            basePath,
+            'data/roadmap.json',
+            '/data/roadmap.json',
+            './data/roadmap.json',
+            '../data/roadmap.json'
+        ];
+        
+        let response = null;
+        
+        for (const path of paths) {
+            try {
+                response = await fetch(path);
+                if (response.ok) {
+                    break;
+                }
+            } catch (e) {
+                continue;
+            }
         }
-        if (!response.ok) {
-            response = await fetch('./data/roadmap.json');
+        
+        if (!response || !response.ok) {
+            throw new Error('Файл roadmap.json не найден');
         }
         const roadmap = await response.json();
         
