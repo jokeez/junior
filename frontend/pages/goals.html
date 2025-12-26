@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цели и дедлайны - CyberSecurity Learning</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberSecurity Learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="roadmap.html"><i class="fas fa-map"></i> План обучения</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Прогресс</a></li>
+                <li><a href="calendar.html"><i class="fas fa-calendar"></i> Календарь</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Блог</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Портфолио</a></li>
+                <li><a href="cheatsheets.html"><i class="fas fa-book"></i> Шпаргалки</a></li>
+                <li><a href="achievements.html"><i class="fas fa-trophy"></i> Достижения</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Настройки</a></li>
+                <li><a href="goals.html" class="active"><i class="fas fa-bullseye"></i> Цели</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Цели и дедлайны</h1>
+                <p>Ставьте цели и следите за их выполнением</p>
+                <button class="btn btn-primary" onclick="showGoalForm()">
+                    <i class="fas fa-plus"></i> Новая цель
+                </button>
+            </div>
+
+            <div id="goalsContainer" class="goals-grid">
+                <!-- Цели будут загружены динамически -->
+            </div>
+        </div>
+    </main>
+
+    <div id="goalModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGoalModal()">&times;</span>
+            <h2>Новая цель</h2>
+            <form id="goalForm">
+                <div class="form-group">
+                    <label>Название цели</label>
+                    <input type="text" id="goalTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Описание</label>
+                    <textarea id="goalDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Дедлайн</label>
+                    <input type="date" id="goalDeadline" required>
+                </div>
+                <div class="form-group">
+                    <label>Целевое количество заданий</label>
+                    <input type="number" id="goalTarget" min="1" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Создать</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeGoalModal()">Отмена</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/goals-deadlines.js"></script>
+    <script>
+        function loadGoals() {
+            const goals = GoalsSystem.getGoals();
+            const container = document.getElementById('goalsContainer');
+            
+            if (goals.length === 0) {
+                container.innerHTML = '<p>Нет целей. Создайте первую цель!</p>';
+                return;
+            }
+            
+            container.innerHTML = goals.map(goal => {
+                const deadline = new Date(goal.deadline);
+                const today = new Date();
+                const daysLeft = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+                const progress = (goal.current / goal.target) * 100;
+                const isOverdue = deadline < today && !goal.completed;
+                
+                return `
+                    <div class="goal-card ${goal.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''}">
+                        <div class="goal-header">
+                            <h3>${goal.title}</h3>
+                            ${goal.completed ? '<span class="goal-badge completed">Выполнено</span>' : ''}
+                            ${isOverdue ? '<span class="goal-badge overdue">Просрочено</span>' : ''}
+                        </div>
+                        <p>${goal.description || ''}</p>
+                        <div class="goal-progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: ${progress}%"></div>
+                            </div>
+                            <span>${goal.current} / ${goal.target}</span>
+                        </div>
+                        <div class="goal-meta">
+                            <span><i class="fas fa-calendar"></i> ${daysLeft > 0 ? daysLeft + ' дней осталось' : 'Дедлайн прошел'}</span>
+                        </div>
+                        <div class="goal-actions">
+                            <button class="btn btn-secondary btn-sm" onclick="deleteGoal('${goal.id}')">Удалить</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function showGoalForm() {
+            document.getElementById('goalModal').classList.add('active');
+        }
+        
+        function closeGoalModal() {
+            document.getElementById('goalModal').classList.remove('active');
+            document.getElementById('goalForm').reset();
+        }
+        
+        function deleteGoal(id) {
+            if (confirm('Удалить цель?')) {
+                GoalsSystem.deleteGoal(id);
+                loadGoals();
+            }
+        }
+        
+        const goalForm = document.getElementById('goalForm');
+        if (goalForm) {
+            goalForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const titleEl = document.getElementById('goalTitle');
+                const descriptionEl = document.getElementById('goalDescription');
+                const deadlineEl = document.getElementById('goalDeadline');
+                const targetEl = document.getElementById('goalTarget');
+                
+                if (!titleEl || !deadlineEl || !targetEl) {
+                    alert('Не все поля заполнены');
+                    return;
+                }
+                
+                GoalsSystem.addGoal({
+                    title: titleEl.value,
+                    description: descriptionEl.value || '',
+                    deadline: deadlineEl.value,
+                    target: parseInt(targetEl.value) || 1
+                });
+                closeGoalModal();
+                loadGoals();
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadGoals();
+            if (typeof GoalsSystem !== 'undefined') {
+                GoalsSystem.checkDeadlines();
+            }
+        });
+    </script>
+</body>
+</html>
+

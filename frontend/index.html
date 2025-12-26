@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформа обучения кибербезопасности</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberSecurity Learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="pages/roadmap.html"><i class="fas fa-map"></i> План обучения</a></li>
+                <li><a href="pages/progress.html"><i class="fas fa-chart-line"></i> Прогресс</a></li>
+                <li><a href="pages/calendar.html"><i class="fas fa-calendar"></i> Календарь</a></li>
+                <li><a href="pages/blog.html"><i class="fas fa-blog"></i> Блог</a></li>
+                <li><a href="pages/portfolio.html"><i class="fas fa-briefcase"></i> Портфолио</a></li>
+                <li><a href="pages/cheatsheets.html"><i class="fas fa-book"></i> Шпаргалки</a></li>
+                <li><a href="pages/achievements.html"><i class="fas fa-trophy"></i> Достижения</a></li>
+                <li><a href="pages/settings.html"><i class="fas fa-cog"></i> Настройки</a></li>
+            </ul>
+            <div class="nav-timer-container" id="navTimerContainer" style="display: none;">
+                <div class="nav-timer" id="navTimer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timerText">--:--</span>
+                </div>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Добро пожаловать в платформу обучения кибербезопасности</h1>
+                <p class="hero-subtitle">Полный пошаговый план: теория + практика с видео-инструкциями</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stat-value" id="totalDays">240</div>
+                        <div class="stat-label">Дней обучения</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-value" id="completedTasks">0</div>
+                        <div class="stat-label">Выполнено заданий</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+                        <div class="stat-value" id="progressPercent">0%</div>
+                        <div class="stat-label">Прогресс</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="pages/roadmap.html" class="btn btn-primary">Начать обучение</a>
+                    <a href="pages/progress.html" class="btn btn-secondary">Мой прогресс</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Возможности платформы</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h3>Детальный план</h3>
+                        <p>Полный план обучения на 240 дней с теорией и практикой</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                        <h3>Отслеживание прогресса</h3>
+                        <p>Отмечайте выполненные задания и следите за своим прогрессом</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-video"></i></div>
+                        <h3>Видео-инструкции</h3>
+                        <p>Встроенные YouTube видео для каждой темы</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-blog"></i></div>
+                        <h3>Блог</h3>
+                        <p>Ведите заметки и делитесь опытом</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3>Портфолио</h3>
+                        <p>Демонстрируйте свои проекты и достижения</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <h3>Календарь</h3>
+                        <p>Планируйте обучение по дням</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-access">
+            <div class="container">
+                <h2 class="section-title">Быстрый доступ</h2>
+                <div class="quick-links">
+                    <a href="pages/roadmap.html" class="quick-link">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Текущий день обучения</span>
+                    </a>
+                    <a href="pages/progress.html" class="quick-link">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Статистика прогресса</span>
+                    </a>
+                    <a href="pages/blog.html" class="quick-link">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Мои заметки</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CyberSecurity Learning Platform. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/gamification.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/sleep-mode.js"></script>
+    <script>
+        // Инициализация таймера после загрузки
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ждем полной загрузки SleepMode
+            setTimeout(() => {
+                if (typeof SleepMode !== 'undefined') {
+                    // Обновляем таймер сразу
+                    SleepMode.updateTimerDisplay();
+                }
+            }, 100);
+        });
+    </script>
+    <script>
+        // Загрузка статистики на главной странице
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof ProgressTracker !== 'undefined') {
+                const stats = ProgressTracker.getStats();
+                document.getElementById('completedTasks').textContent = stats.completedTasks;
+                document.getElementById('progressPercent').textContent = stats.progressPercent + '%';
+            }
+            
+            // Геймификация
+            if (typeof Gamification !== 'undefined') {
+                const points = Gamification.getPoints();
+                const level = Gamification.getLevel();
+                const streak = Gamification.getStreak();
+                // Можно добавить отображение на главной странице
+            }
+        });
+    </script>
+</body>
+</html>
+

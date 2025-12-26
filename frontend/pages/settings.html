@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки - CyberSecurity Learning</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberSecurity Learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="roadmap.html"><i class="fas fa-map"></i> План обучения</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Прогресс</a></li>
+                <li><a href="calendar.html"><i class="fas fa-calendar"></i> Календарь</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Блог</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Портфолио</a></li>
+                <li><a href="cheatsheets.html"><i class="fas fa-book"></i> Шпаргалки</a></li>
+                <li><a href="achievements.html"><i class="fas fa-trophy"></i> Достижения</a></li>
+                <li><a href="settings.html" class="active"><i class="fas fa-cog"></i> Настройки</a></li>
+                <li><a href="goals.html"><i class="fas fa-bullseye"></i> Цели</a></li>
+            </ul>
+            <div class="nav-timer-container" id="navTimerContainer" style="display: none;">
+                <div class="nav-timer" id="navTimer">
+                    <i class="fas fa-clock"></i>
+                    <span id="timerText">--:--</span>
+                </div>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Настройки</h1>
+                <p>Управление режимом сна и уведомлениями</p>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fas fa-bed"></i> Режим сна</h2>
+                <div class="settings-card">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="sleepModeEnabled" onchange="toggleSleepMode()">
+                            Включить режим сна
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Время подъема (каждый день)</label>
+                        <input type="time" id="wakeUpTime" value="06:00" onchange="updateWakeUpTime()">
+                        <p class="form-help">Уведомление будет приходить каждый день в это время</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Время отхода ко сну</label>
+                        <input type="time" id="sleepTime" value="22:00" onchange="updateSleepTime()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fas fa-bell"></i> Уведомления о перерывах</h2>
+                <div class="settings-card">
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="breakRemindersEnabled" onchange="toggleBreakReminders()">
+                            Напоминать о перерывах
+                        </label>
+                        <p class="form-help">Уведомления будут приходить каждые 90 минут, чтобы вы не перегорели</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Интервал между перерывами (минуты)</label>
+                        <input type="number" id="breakInterval" value="90" min="30" max="180" step="5" onchange="updateBreakInterval()">
+                        <p class="form-help">Рекомендуется: 90 минут (техника Pomodoro)</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Длительность перерыва (минуты)</label>
+                        <input type="number" id="breakDuration" value="15" min="5" max="60" step="5" onchange="updateBreakDuration()">
+                        <p class="form-help">Рекомендуется: 15 минут для восстановления</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fas fa-bell-slash"></i> Разрешения</h2>
+                <div class="settings-card">
+                    <p>Для работы уведомлений необходимо разрешить их в браузере</p>
+                    <button class="btn btn-primary" onclick="requestNotificationPermission()">
+                        <i class="fas fa-bell"></i> Разрешить уведомления
+                    </button>
+                    <p id="notificationStatus" class="form-help"></p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2><i class="fas fa-info-circle"></i> Информация</h2>
+                <div class="settings-card">
+                    <p><strong>Режим сна:</strong> Помогает поддерживать режим дня, напоминая о подъеме в 6 утра каждый день.</p>
+                    <p><strong>Перерывы:</strong> Регулярные перерывы помогают избежать переутомления и повышают эффективность обучения.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="notificationsContainer"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CyberSecurity Learning Platform. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/sleep-mode.js"></script>
+    <script src="../js/reminders.js"></script>
+    <script>
+        // Загрузка настроек
+        function loadSettings() {
+            if (typeof SleepMode === 'undefined') {
+                console.error('SleepMode не загружен');
+                return;
+            }
+            
+            const data = SleepMode.getData();
+            document.getElementById('sleepModeEnabled').checked = data.enabled !== false;
+            document.getElementById('wakeUpTime').value = data.wakeUpTime || '06:00';
+            document.getElementById('sleepTime').value = data.sleepTime || '22:00';
+            document.getElementById('breakRemindersEnabled').checked = data.breakReminders !== false;
+            document.getElementById('breakInterval').value = data.breakInterval || 90;
+            document.getElementById('breakDuration').value = data.breakDuration || 15;
+            
+            updateNotificationStatus();
+        }
+
+        function toggleSleepMode() {
+            if (typeof SleepMode === 'undefined') {
+                console.error('SleepMode не загружен');
+                return;
+            }
+            
+            const enabled = document.getElementById('sleepModeEnabled').checked;
+            if (enabled) {
+                SleepMode.enable();
+            } else {
+                SleepMode.disable();
+            }
+            SleepMode.updateTimerDisplay();
+        }
+
+function updateWakeUpTime() {
+    const time = document.getElementById('wakeUpTime').value;
+    if (typeof SleepMode !== 'undefined') {
+        SleepMode.setWakeUpTime(time);
+        SleepMode.updateTimerDisplay();
+    }
+}
+
+function updateSleepTime() {
+    const time = document.getElementById('sleepTime').value;
+    if (typeof SleepMode !== 'undefined') {
+        SleepMode.setSleepTime(time);
+    }
+}
+
+function toggleBreakReminders() {
+    const enabled = document.getElementById('breakRemindersEnabled').checked;
+    if (typeof SleepMode !== 'undefined') {
+        SleepMode.toggleBreakReminders(enabled);
+        SleepMode.updateTimerDisplay();
+    }
+}
+
+        function updateBreakInterval() {
+            const interval = parseInt(document.getElementById('breakInterval').value);
+            if (interval >= 30 && interval <= 180) {
+                if (typeof SleepMode !== 'undefined') {
+                    SleepMode.setBreakInterval(interval);
+                }
+            }
+        }
+
+        function updateBreakDuration() {
+            const duration = parseInt(document.getElementById('breakDuration').value);
+            if (duration >= 5 && duration <= 60) {
+                if (typeof SleepMode !== 'undefined') {
+                    SleepMode.setBreakDuration(duration);
+                }
+            }
+        }
+
+        function requestNotificationPermission() {
+            SleepMode.requestNotificationPermission();
+            setTimeout(updateNotificationStatus, 500);
+        }
+
+        function updateNotificationStatus() {
+            const statusEl = document.getElementById('notificationStatus');
+            if ('Notification' in window) {
+                if (Notification.permission === 'granted') {
+                    statusEl.textContent = '✅ Уведомления разрешены';
+                    statusEl.style.color = 'var(--success-color)';
+                } else if (Notification.permission === 'denied') {
+                    statusEl.textContent = '❌ Уведомления заблокированы. Разрешите в настройках браузера.';
+                    statusEl.style.color = 'var(--danger-color)';
+                } else {
+                    statusEl.textContent = '⚠️ Разрешение не запрошено';
+                    statusEl.style.color = 'var(--warning-color)';
+                }
+            } else {
+                statusEl.textContent = '❌ Браузер не поддерживает уведомления';
+                statusEl.style.color = 'var(--danger-color)';
+            }
+        }
+
+        function loadReminders() {
+            if (typeof RemindersSystem === 'undefined') {
+                console.error('RemindersSystem не загружен');
+                return;
+            }
+            
+            const reminders = RemindersSystem.getReminders();
+            const container = document.getElementById('remindersList');
+            
+            if (!container) {
+                console.warn('Контейнер для напоминаний не найден');
+                return;
+            }
+            
+            if (reminders.length === 0) {
+                container.innerHTML = '<p>Нет напоминаний</p>';
+                return;
+            }
+            
+            container.innerHTML = reminders.map(r => {
+                const escapedId = r.id.replace(/'/g, "\\'");
+                const escapedMessage = (r.message || '').replace(/"/g, '&quot;');
+                return `
+                    <div class="reminder-item">
+                        <div>
+                            <strong>${r.time}</strong> - ${escapedMessage}
+                            <div class="reminder-days">${r.days.map(d => ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'][d]).join(', ')}</div>
+                        </div>
+                        <button class="btn btn-secondary btn-sm" onclick="deleteReminder('${escapedId}')">Удалить</button>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function showReminderForm() {
+            document.getElementById('reminderModal').classList.add('active');
+        }
+        
+        function closeReminderModal() {
+            document.getElementById('reminderModal').classList.remove('active');
+            document.getElementById('reminderForm').reset();
+        }
+        
+        function deleteReminder(id) {
+            const reminders = RemindersSystem.getReminders().filter(r => r.id !== id);
+            RemindersSystem.saveReminders(reminders);
+            loadReminders();
+        }
+        
+        const reminderForm = document.getElementById('reminderForm');
+        if (reminderForm) {
+            reminderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const timeEl = document.getElementById('reminderTime');
+                const messageEl = document.getElementById('reminderMessage');
+                
+                if (!timeEl || !messageEl) {
+                    alert('Заполните все поля');
+                    return;
+                }
+                
+                const days = Array.from(document.querySelectorAll('.days-selector input:checked')).map(cb => parseInt(cb.value));
+                if (days.length === 0) {
+                    alert('Выберите хотя бы один день недели');
+                    return;
+                }
+                
+                if (typeof RemindersSystem !== 'undefined') {
+                    RemindersSystem.addReminder({
+                        time: timeEl.value,
+                        message: messageEl.value,
+                        days: days
+                    });
+                    closeReminderModal();
+                    loadReminders();
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ждем загрузки всех модулей
+            setTimeout(() => {
+                loadSettings();
+                if (typeof loadReminders === 'function') {
+                    loadReminders();
+                }
+                // Инициализация таймера
+                if (typeof SleepMode !== 'undefined') {
+                    SleepMode.updateTimerDisplay();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+

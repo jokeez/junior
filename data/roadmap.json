@@ -1,0 +1,1323 @@
+{
+  "title": "План обучения кибербезопасности",
+  "description": "Полный пошаговый план: теория + практика с видео-инструкциями",
+  "totalDays": 240,
+  "phases": [
+    {
+      "id": "phase0",
+      "name": "ФАЗА 0: ОСНОВЫ IT",
+      "duration": 100,
+      "months": [
+        {
+          "id": "month1",
+          "name": "МЕСЯЦ 1: КОМПЬЮТЕРНЫЕ СЕТИ",
+          "weeks": [
+            {
+              "id": "week1-2",
+              "name": "НЕДЕЛЯ 1-2: ОСНОВЫ СЕТЕЙ",
+              "days": [
+                {
+                  "id": "day1-3",
+                  "dayRange": "1-3",
+                  "type": "theory",
+                  "title": "Модель OSI и TCP/IP",
+                  "description": "Изучение модели OSI и TCP/IP",
+                  "youtubeVideo": "Модель OSI 7 уровней простыми словами за 15 минут",
+                  "whatToUnderstand": "Зачем нужны уровни, чем модель OSI отличается от TCP/IP",
+                  "tasks": []
+                },
+                {
+                  "id": "day4-6",
+                  "dayRange": "4-6",
+                  "type": "practice",
+                  "title": "Настройка сети в Packet Tracer",
+                  "description": "Практическая работа с сетями",
+                  "youtubeVideo": "Cisco Packet Tracer для начинающих: первая сеть",
+                  "whatToDo": "Скачать Cisco Packet Tracer. Создать сеть: 2 компьютера → коммутатор. Назначить IP-адреса вручную (192.168.1.10 и 192.168.1.20), пропинговать.",
+                  "tasks": [
+                    {
+                      "id": "task1",
+                      "text": "Скачать и установить Cisco Packet Tracer",
+                      "completed": false
+                    },
+                    {
+                      "id": "task2",
+                      "text": "Создать сеть с 2 компьютерами и коммутатором",
+                      "completed": false
+                    },
+                    {
+                      "id": "task3",
+                      "text": "Назначить IP-адреса 192.168.1.10 и 192.168.1.20",
+                      "completed": false
+                    },
+                    {
+                      "id": "task4",
+                      "text": "Пропинговать между компьютерами",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day7-9",
+                  "dayRange": "7-9",
+                  "type": "theory",
+                  "title": "IP-адресация, маски подсетей",
+                  "description": "Изучение IP-адресации",
+                  "youtubeVideo": "Маска подсети за 10 минут: самое простое объяснение",
+                  "whatToUnderstand": "Как понять, какие устройства в одной сети, а какие в разных",
+                  "tasks": []
+                },
+                {
+                  "id": "day10-12",
+                  "dayRange": "10-12",
+                  "type": "practice",
+                  "title": "Разбиение на подсети",
+                  "description": "Практика работы с подсетями",
+                  "youtubeVideo": "Как делить сеть на подсети: практическое задание",
+                  "whatToDo": "Взять сеть 192.168.0.0/24. Разделить на 4 подсети по 62 хоста. Прописать диапазоны адресов для каждой на бумаге.",
+                  "tasks": [
+                    {
+                      "id": "task5",
+                      "text": "Разделить сеть 192.168.0.0/24 на 4 подсети",
+                      "completed": false
+                    },
+                    {
+                      "id": "task6",
+                      "text": "Прописать диапазоны адресов для каждой подсети",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4",
+              "name": "НЕДЕЛЯ 3-4: ПРОТОКОЛЫ И АНАЛИЗ",
+              "days": [
+                {
+                  "id": "day13-15",
+                  "dayRange": "13-15",
+                  "type": "theory",
+                  "title": "Протоколы DNS и HTTP",
+                  "description": "Изучение протоколов DNS и HTTP",
+                  "youtubeVideo": "Как работает DNS - подробное объяснение",
+                  "whatToUnderstand": "Как браузер находит сайт, что такое DNS-запись",
+                  "tasks": []
+                },
+                {
+                  "id": "day16-18",
+                  "dayRange": "16-18",
+                  "type": "practice",
+                  "title": "Работа с DNS и HTTP через командную строку",
+                  "description": "Практика с DNS и HTTP",
+                  "youtubeVideo": "Командная строка Windows/Linux: nslookup, ping, curl",
+                  "whatToDo": "1) С помощью nslookup узнать IP-адрес vk.com и google.com. 2) С помощью curl -I получить заголовки ответа от сайта ya.ru.",
+                  "tasks": [
+                    {
+                      "id": "task7",
+                      "text": "Использовать nslookup для vk.com и google.com",
+                      "completed": false
+                    },
+                    {
+                      "id": "task8",
+                      "text": "Использовать curl -I для ya.ru",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day19-21",
+                  "dayRange": "19-21",
+                  "type": "theory",
+                  "title": "Протоколы TCP и UDP, порты",
+                  "description": "Изучение TCP и UDP",
+                  "youtubeVideo": "TCP vs UDP: в чем разница на реальных примерах",
+                  "whatToUnderstand": "Почему Skype использует UDP, а браузер — TCP",
+                  "tasks": []
+                },
+                {
+                  "id": "day22-24",
+                  "dayRange": "22-24",
+                  "type": "practice",
+                  "title": "Анализ портов и трафика",
+                  "description": "Работа с Wireshark",
+                  "youtubeVideo": "Wireshark для начинающих: первый захват пакетов",
+                  "whatToDo": "1) Установить Wireshark. 2) Запустить захват трафика и зайти на любой сайт. 3) Найти в захвате TCP-пакет с установлением соединения (SYN, SYN-ACK, ACK).",
+                  "tasks": [
+                    {
+                      "id": "task9",
+                      "text": "Установить Wireshark",
+                      "completed": false
+                    },
+                    {
+                      "id": "task10",
+                      "text": "Захватить трафик и найти TCP handshake",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day25-27",
+                  "dayRange": "25-27",
+                  "type": "theory",
+                  "title": "VLAN и коммутация",
+                  "description": "Изучение VLAN",
+                  "youtubeVideo": "VLAN для начинающих: что это и зачем нужно",
+                  "whatToUnderstand": "Как разделить одну физическую сеть на несколько логических",
+                  "tasks": []
+                },
+                {
+                  "id": "day28-30",
+                  "dayRange": "28-30",
+                  "type": "practice",
+                  "title": "Настройка VLAN в Packet Tracer",
+                  "description": "Практика с VLAN",
+                  "youtubeVideo": "Настройка VLAN в Cisco Packet Tracer: практическое руководство",
+                  "whatToDo": "Создать сеть с 2 VLAN (VLAN 10 - отдел продаж, VLAN 20 - отдел IT). Настроить коммутатор, проверить связность внутри VLAN и изоляцию между VLAN.",
+                  "tasks": [
+                    {
+                      "id": "task11",
+                      "text": "Создать сеть с 2 VLAN в Packet Tracer",
+                      "completed": false
+                    },
+                    {
+                      "id": "task12",
+                      "text": "Проверить связность и изоляцию",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "finalProject": {
+            "id": "project1",
+            "dayRange": "25-30",
+            "title": "Создание сети офиса",
+            "youtubeVideo": "Создание сложной сети в Cisco Packet Tracer: офис с отделами",
+            "description": "Собрать сеть: 3 отдела (финансы, продажи, IT) в разных подсетях, общий сервер, маршрутизатор. Настроить так, чтобы все могли ходить в интернет и на сервер, но не могли напрямую связываться между отделами.",
+            "tasks": [
+              {
+                "id": "project1-task1",
+                "text": "Создать сеть с 3 отделами в разных подсетях",
+                "completed": false
+              },
+              {
+                "id": "project1-task2",
+                "text": "Настроить маршрутизатор",
+                "completed": false
+              },
+              {
+                "id": "project1-task3",
+                "text": "Настроить доступ в интернет и к серверу",
+                "completed": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "month2",
+          "name": "МЕСЯЦ 2: ОПЕРАЦИОННАЯ СИСТЕМА LINUX",
+          "weeks": [
+            {
+              "id": "week1-2-linux",
+              "name": "НЕДЕЛЯ 1-2: УСТАНОВКА И БАЗОВЫЕ КОМАНДЫ",
+              "days": [
+                {
+                  "id": "day31-33",
+                  "dayRange": "31-33",
+                  "type": "theory",
+                  "title": "Зачем Linux в безопасности, основы",
+                  "description": "Основы Linux",
+                  "youtubeVideo": "Почему хакеры используют Kali Linux? Основы Linux для начинающих",
+                  "whatToUnderstand": "Почему большинство инструментов безопасности работают на Linux",
+                  "tasks": []
+                },
+                {
+                  "id": "day34-36",
+                  "dayRange": "34-36",
+                  "type": "practice",
+                  "title": "Установка Kali Linux в VirtualBox",
+                  "description": "Установка Linux",
+                  "youtubeVideo": "Установка Kali Linux 2024 в VirtualBox: полное руководство",
+                  "whatToDo": "1) Скачать VirtualBox и образ Kali Linux. 2) Установить систему, создать пользователя. 3) Сделать снимок (snapshot) чистой системы.",
+                  "tasks": [
+                    {
+                      "id": "task13",
+                      "text": "Скачать VirtualBox и Kali Linux",
+                      "completed": false
+                    },
+                    {
+                      "id": "task14",
+                      "text": "Установить Kali Linux",
+                      "completed": false
+                    },
+                    {
+                      "id": "task15",
+                      "text": "Создать snapshot",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day37-39",
+                  "dayRange": "37-39",
+                  "type": "theory",
+                  "title": "Файловая система Linux, основные каталоги",
+                  "description": "Файловая система",
+                  "youtubeVideo": "Файловая система Linux: что где лежит (/etc, /var, /home)",
+                  "whatToUnderstand": "Для чего нужны каталоги /etc (конфиги), /var (логи), /tmp (временные файлы)",
+                  "tasks": []
+                },
+                {
+                  "id": "day40-42",
+                  "dayRange": "40-42",
+                  "type": "practice",
+                  "title": "Работа с файлами и каталогами",
+                  "description": "Практика с файлами",
+                  "youtubeVideo": "Терминал Linux: первые 20 команд для начинающих (ls, cd, cp, mv, rm)",
+                  "whatToDo": "1) Создать структуру каталогов ~/labs/{network,web,scripts}. 2) В каталоге web создать файл test.txt с текстом \"Hello Security\". 3) Скопировать этот файл в ~/backups/.",
+                  "tasks": [
+                    {
+                      "id": "task16",
+                      "text": "Создать структуру каталогов ~/labs",
+                      "completed": false
+                    },
+                    {
+                      "id": "task17",
+                      "text": "Создать файл test.txt",
+                      "completed": false
+                    },
+                    {
+                      "id": "task18",
+                      "text": "Скопировать файл в ~/backups/",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4-linux",
+              "name": "НЕДЕЛЯ 3-4: СИСТЕМНОЕ АДМИНИСТРИРОВАНИЕ",
+              "days": [
+                {
+                  "id": "day43-45",
+                  "dayRange": "43-45",
+                  "type": "theory",
+                  "title": "Пользователи, группы и права доступа",
+                  "description": "Права доступа",
+                  "youtubeVideo": "Права доступа в Linux: chmod, chown, chgrp на практике",
+                  "whatToUnderstand": "Что означают цифры 755 и 644 в правах доступа",
+                  "tasks": []
+                },
+                {
+                  "id": "day46-48",
+                  "dayRange": "46-48",
+                  "type": "practice",
+                  "title": "Управление правами и пользователями",
+                  "description": "Практика с правами",
+                  "youtubeVideo": "Создание пользователей и групп в Linux: практическое руководство",
+                  "whatToDo": "1) Создать пользователя analyst. 2) Создать группу security. 3) Добавить пользователя в группу. 4) Для папки /opt/secret_data установить права: владелец — root, группа — security, доступ — только чтение для группы.",
+                  "tasks": [
+                    {
+                      "id": "task19",
+                      "text": "Создать пользователя analyst",
+                      "completed": false
+                    },
+                    {
+                      "id": "task20",
+                      "text": "Создать группу security",
+                      "completed": false
+                    },
+                    {
+                      "id": "task21",
+                      "text": "Настроить права для /opt/secret_data",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day49-51",
+                  "dayRange": "49-51",
+                  "type": "theory",
+                  "title": "Процессы, службы и сетевая настройка",
+                  "description": "Управление процессами",
+                  "youtubeVideo": "Управление процессами в Linux: ps, top, kill, systemctl",
+                  "whatToUnderstand": "Как найти \"тяжелый\" процесс и как управлять службами",
+                  "tasks": []
+                },
+                {
+                  "id": "day52-55",
+                  "dayRange": "52-55",
+                  "type": "practice",
+                  "title": "Настройка веб-сервера и мониторинг",
+                  "description": "Настройка Nginx",
+                  "youtubeVideo": "Установка и настройка Nginx на Ubuntu/Kali Linux за 10 минут",
+                  "whatToDo": "1) Установить Nginx (sudo apt install nginx). 2) Запустить службу, добавить в автозагрузку. 3) Настроить брандмауэр (ufw) для разрешения порта 80. 4) Проверить доступность в браузере.",
+                  "tasks": [
+                    {
+                      "id": "task22",
+                      "text": "Установить Nginx",
+                      "completed": false
+                    },
+                    {
+                      "id": "task23",
+                      "text": "Настроить автозагрузку",
+                      "completed": false
+                    },
+                    {
+                      "id": "task24",
+                      "text": "Настроить брандмауэр",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day56-58",
+                  "dayRange": "56-58",
+                  "type": "theory",
+                  "title": "SSH и удаленное управление",
+                  "description": "SSH основы",
+                  "youtubeVideo": "SSH для начинающих: ключи, туннелирование, безопасность",
+                  "whatToUnderstand": "Как безопасно подключаться к удаленным серверам, что такое SSH-ключи",
+                  "tasks": []
+                },
+                {
+                  "id": "day59-60",
+                  "dayRange": "59-60",
+                  "type": "practice",
+                  "title": "Настройка SSH и туннелирование",
+                  "description": "Практика с SSH",
+                  "youtubeVideo": "Настройка SSH с ключами и туннелирование: практика",
+                  "whatToDo": "1) Сгенерировать SSH-пару ключей (ssh-keygen). 2) Настроить подключение по ключу (без пароля). 3) Создать SSH-туннель для доступа к веб-серверу через удаленную машину.",
+                  "tasks": [
+                    {
+                      "id": "task25",
+                      "text": "Сгенерировать SSH ключи",
+                      "completed": false
+                    },
+                    {
+                      "id": "task26",
+                      "text": "Настроить подключение по ключу",
+                      "completed": false
+                    },
+                    {
+                      "id": "task27",
+                      "text": "Создать SSH туннель",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "finalProject": {
+            "id": "project2",
+            "dayRange": "56-60",
+            "title": "Написание bash-скрипта для мониторинга",
+            "youtubeVideo": "Bash-скрипты для начинающих: пишем первый скрипт мониторинга",
+            "description": "Написать скрипт server_check.sh, который: 1) Проверяет доступность порта 80 на localhost, 2) Проверяет занятость диска, 3) Выводит 5 самых \"прожорливых\" процессов. Сделать скрипт исполняемым и запустить по расписанию (cron).",
+            "tasks": [
+              {
+                "id": "project2-task1",
+                "text": "Написать скрипт server_check.sh",
+                "completed": false
+              },
+              {
+                "id": "project2-task2",
+                "text": "Добавить проверку порта 80",
+                "completed": false
+              },
+              {
+                "id": "project2-task3",
+                "text": "Добавить проверку диска и процессов",
+                "completed": false
+              },
+              {
+                "id": "project2-task4",
+                "text": "Настроить cron",
+                "completed": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "month3",
+          "name": "МЕСЯЦ 3: БАЗОВОЕ ПРОГРАММИРОВАНИЕ (PYTHON ДЛЯ БЕЗОПАСНОСТИ)",
+          "weeks": [
+            {
+              "id": "week1-2-python",
+              "name": "НЕДЕЛЯ 1-2: ОСНОВЫ PYTHON",
+              "days": [
+                {
+                  "id": "day61-63",
+                  "dayRange": "61-63",
+                  "type": "theory",
+                  "title": "Переменные, типы данных, ввод/вывод",
+                  "description": "Основы Python",
+                  "youtubeVideo": "Python для начинающих: урок 1 - переменные и типы данных",
+                  "whatToUnderstand": "Как хранить данные, что такое строка, число, список",
+                  "tasks": []
+                },
+                {
+                  "id": "day64-66",
+                  "dayRange": "64-66",
+                  "type": "practice",
+                  "title": "Первые программы",
+                  "description": "Практика Python",
+                  "youtubeVideo": "Пишем первую программу на Python: калькулятор и конвертер",
+                  "whatToDo": "1) Написать программу, которая запрашивает имя и возраст, затем выводит приветствие. 2) Написать конвертер IP-адреса из десятичного в двоичный формат (только для одного октета).",
+                  "tasks": [
+                    {
+                      "id": "task28",
+                      "text": "Написать программу с приветствием",
+                      "completed": false
+                    },
+                    {
+                      "id": "task29",
+                      "text": "Написать конвертер IP-адреса",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day67-69",
+                  "dayRange": "67-69",
+                  "type": "theory",
+                  "title": "Условия и циклы",
+                  "description": "Условия и циклы",
+                  "youtubeVideo": "Условные операторы if/elif/else в Python на примерах",
+                  "whatToUnderstand": "Как программа принимает решения",
+                  "tasks": []
+                },
+                {
+                  "id": "day70-72",
+                  "dayRange": "70-72",
+                  "type": "practice",
+                  "title": "Программа для анализа логов",
+                  "description": "Анализ логов",
+                  "youtubeVideo": "Python: парсим логи с помощью условий и циклов",
+                  "whatToDo": "Написать программу, которая читает файл access.log (скачать пример), считает количество запросов с кодом ответа 404 и выводит их список.",
+                  "tasks": [
+                    {
+                      "id": "task30",
+                      "text": "Написать программу анализа логов",
+                      "completed": false
+                    },
+                    {
+                      "id": "task31",
+                      "text": "Подсчитать запросы с кодом 404",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day73-75",
+                  "dayRange": "73-75",
+                  "type": "theory",
+                  "title": "Обработка ошибок и исключений",
+                  "description": "Обработка ошибок",
+                  "youtubeVideo": "Обработка ошибок в Python: try/except/finally для начинающих",
+                  "whatToUnderstand": "Как программа обрабатывает ошибки, что такое исключения",
+                  "tasks": []
+                },
+                {
+                  "id": "day76-78",
+                  "dayRange": "76-78",
+                  "type": "practice",
+                  "title": "Улучшение программ с обработкой ошибок",
+                  "description": "Практика обработки ошибок",
+                  "youtubeVideo": "Python: добавляем обработку ошибок в существующие программы",
+                  "whatToDo": "Улучшить программу анализа логов: добавить обработку ошибок (файл не найден, нет прав доступа, пустой файл). Программа должна корректно работать во всех случаях.",
+                  "tasks": [
+                    {
+                      "id": "task32",
+                      "text": "Добавить обработку ошибок в программу",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4-python",
+              "name": "НЕДЕЛЯ 3-4: СЕТЕВОЕ ПРОГРАММИРОВАНИЕ ДЛЯ БЕЗОПАСНОСТИ",
+              "days": [
+                {
+                  "id": "day79-81",
+                  "dayRange": "79-81",
+                  "type": "theory",
+                  "title": "Библиотеки requests и socket",
+                  "description": "Сетевое программирование",
+                  "youtubeVideo": "Python библиотека requests: делаем HTTP-запросы за 15 минут",
+                  "whatToUnderstand": "Как программа может общаться с веб-серверами",
+                  "tasks": []
+                },
+                {
+                  "id": "day82-84",
+                  "dayRange": "82-84",
+                  "type": "practice",
+                  "title": "Сканер открытых портов",
+                  "description": "Сканер портов",
+                  "youtubeVideo": "Пишем сканер портов на Python с нуля (socket library)",
+                  "whatToDo": "Написать скрипт, который сканирует диапазон портов на localhost (127.0.0.1) и выводит список открытых. Добавить таймаут 1 секунду.",
+                  "tasks": [
+                    {
+                      "id": "task33",
+                      "text": "Написать сканер портов",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day85-87",
+                  "dayRange": "85-87",
+                  "type": "theory",
+                  "title": "Работа с файлами и аргументами командной строки",
+                  "description": "Файлы и аргументы",
+                  "youtubeVideo": "Python: работа с файлами, чтение и запись + argparse",
+                  "whatToUnderstand": "Как скрипт получает параметры при запуске",
+                  "tasks": []
+                },
+                {
+                  "id": "day88-90",
+                  "dayRange": "88-90",
+                  "type": "practice",
+                  "title": "Утилита для проверки сайтов",
+                  "description": "Проверка сайтов",
+                  "youtubeVideo": "Пишем утилиту для проверки доступности сайтов на Python",
+                  "whatToDo": "Написать скрипт site_checker.py, который принимает файл со списком URL и проверяет их доступность (код ответа 200), результат сохраняет в CSV-файл.",
+                  "tasks": [
+                    {
+                      "id": "task34",
+                      "text": "Написать site_checker.py",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day91-93",
+                  "dayRange": "91-93",
+                  "type": "theory",
+                  "title": "Работа с JSON, CSV и регулярными выражениями",
+                  "description": "JSON, CSV, regex",
+                  "youtubeVideo": "Python: работа с JSON и CSV файлами + регулярные выражения",
+                  "whatToUnderstand": "Как парсить структурированные данные, как искать паттерны в тексте",
+                  "tasks": []
+                },
+                {
+                  "id": "day94-96",
+                  "dayRange": "94-96",
+                  "type": "practice",
+                  "title": "Парсер логов с регулярными выражениями",
+                  "description": "Парсинг логов",
+                  "youtubeVideo": "Python: парсим логи с помощью регулярных выражений (regex)",
+                  "whatToDo": "Написать скрипт, который парсит access.log, извлекает IP-адреса, User-Agent и время запроса с помощью регулярных выражений. Сохранить результаты в JSON-файл.",
+                  "tasks": [
+                    {
+                      "id": "task35",
+                      "text": "Написать парсер логов с regex",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day97-99",
+                  "dayRange": "97-99",
+                  "type": "theory",
+                  "title": "Работа с API (REST)",
+                  "description": "REST API",
+                  "youtubeVideo": "Python requests: работа с REST API для начинающих",
+                  "whatToUnderstand": "Как получать данные из веб-API, что такое JSON-ответы",
+                  "tasks": []
+                },
+                {
+                  "id": "day100-102",
+                  "dayRange": "100-102",
+                  "type": "practice",
+                  "title": "Интеграция с внешним API",
+                  "description": "Работа с API",
+                  "youtubeVideo": "Python: создаем утилиту для проверки IP через API",
+                  "whatToDo": "Написать скрипт, который принимает IP-адрес и использует бесплатный API (например, ip-api.com) для получения информации о геолокации. Сохранить результат в файл.",
+                  "tasks": [
+                    {
+                      "id": "task36",
+                      "text": "Написать скрипт для работы с IP API",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "finalProject": {
+            "id": "project3",
+            "dayRange": "100-105",
+            "title": "Простой сниффер/анализатор пакетов",
+            "youtubeVideo": "Пишем простой сниффер на Python с помощью scapy",
+            "description": "1) Установить библиотеку scapy. 2) Написать скрипт, который перехватывает пакеты в сети и выводит информацию об IP-адресах отправителя/получателя. 3) Добавить фильтр для отображения только HTTP-запросов. ВАЖНО: Запускать только в своей домашней сети на своей машине.",
+            "tasks": [
+              {
+                "id": "project3-task1",
+                "text": "Установить scapy",
+                "completed": false
+              },
+              {
+                "id": "project3-task2",
+                "text": "Написать сниффер пакетов",
+                "completed": false
+              },
+              {
+                "id": "project3-task3",
+                "text": "Добавить фильтр HTTP",
+                "completed": false
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase1",
+      "name": "ФАЗА 1: ВХОЖДЕНИЕ В БЕЗОПАСНОСТЬ",
+      "duration": 100,
+      "months": [
+        {
+          "id": "month4",
+          "name": "МЕСЯЦ 4: ОСНОВЫ КИБЕРБЕЗОПАСНОСТИ НА ПРАКТИКЕ",
+          "weeks": [
+            {
+              "id": "week1-2-security",
+              "name": "НЕДЕЛЯ 1-2: TRYHACKME - ПОДГОТОВКА",
+              "days": [
+                {
+                  "id": "day106-108",
+                  "dayRange": "106-108",
+                  "type": "theory",
+                  "title": "Принципы безопасности CIA, этичный хакинг",
+                  "description": "Основы безопасности",
+                  "youtubeVideo": "Основы кибербезопасности: CIA триада и этичный хакинг",
+                  "whatToUnderstand": "Чем белый хат отличается от черного, что такое ответственное разглашение",
+                  "tasks": []
+                },
+                {
+                  "id": "day109-115",
+                  "dayRange": "109-115",
+                  "type": "practice",
+                  "title": "TryHackMe - Pre-Security Path",
+                  "description": "TryHackMe обучение",
+                  "youtubeVideo": "TryHackMe для начинающих: как начать и первые комнаты",
+                  "whatToDo": "Зарегистрироваться на tryhackme.com. Пройти полностью путь \"Pre-Security\". Особое внимание: комнаты \"Network Fundamentals\", \"Linux Fundamentals\".",
+                  "tasks": [
+                    {
+                      "id": "task37",
+                      "text": "Зарегистрироваться на TryHackMe",
+                      "completed": false
+                    },
+                    {
+                      "id": "task38",
+                      "text": "Пройти Pre-Security Path",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day116-118",
+                  "dayRange": "116-118",
+                  "type": "theory",
+                  "title": "OWASP Top 10 введение",
+                  "description": "OWASP Top 10",
+                  "youtubeVideo": "OWASP Top 10 2021: обзор для начинающих",
+                  "whatToUnderstand": "Какие уязвимости встречаются чаще всего",
+                  "tasks": []
+                },
+                {
+                  "id": "day119-122",
+                  "dayRange": "119-122",
+                  "type": "practice",
+                  "title": "TryHackMe - Web Application Security",
+                  "description": "Веб-безопасность",
+                  "youtubeVideo": "TryHackMe: OWASP Top 10 комнаты разбор",
+                  "whatToDo": "Пройти комнаты \"OWASP Top 10\", \"OWASP Juice Shop\".",
+                  "tasks": [
+                    {
+                      "id": "task39",
+                      "text": "Пройти OWASP Top 10 комнаты",
+                      "completed": false
+                    },
+                    {
+                      "id": "task40",
+                      "text": "Пройти OWASP Juice Shop",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4-security",
+              "name": "НЕДЕЛЯ 3-4: ПЕНТЕСТ С НУЛЯ",
+              "days": [
+                {
+                  "id": "day123-125",
+                  "dayRange": "123-125",
+                  "type": "theory",
+                  "title": "Методология пентеста",
+                  "description": "Методология",
+                  "youtubeVideo": "Методология пентеста: разведка, сканирование, эксплуатация",
+                  "whatToUnderstand": "Из каких этапов состоит профессиональный пентест",
+                  "tasks": []
+                },
+                {
+                  "id": "day126-130",
+                  "dayRange": "126-130",
+                  "type": "practice",
+                  "title": "Работа с Nmap и Burp Suite",
+                  "description": "Инструменты пентеста",
+                  "youtubeVideo": "Nmap полный гайд для пентеста: все ключи и примеры",
+                  "whatToDo": "1) Просканировать машину с TryHackMe, определить ОС и службы. 2) Установить Burp Suite Community, настроить прокси в браузере. 3) Перехватить запрос к любому сайту и изменить User-Agent.",
+                  "tasks": [
+                    {
+                      "id": "task41",
+                      "text": "Просканировать машину с Nmap",
+                      "completed": false
+                    },
+                    {
+                      "id": "task42",
+                      "text": "Настроить Burp Suite",
+                      "completed": false
+                    },
+                    {
+                      "id": "task43",
+                      "text": "Перехватить и изменить запрос",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day131-133",
+                  "dayRange": "131-133",
+                  "type": "theory",
+                  "title": "SQL-инъекции и XSS",
+                  "description": "Веб-уязвимости",
+                  "youtubeVideo": "SQL инъекция с нуля: теория и практика на DVWA",
+                  "whatToUnderstand": "Как злоумышленник может \"поговорить\" с базой данных через форму",
+                  "tasks": []
+                },
+                {
+                  "id": "day134-135",
+                  "dayRange": "134-135",
+                  "type": "practice",
+                  "title": "Взлом учебного стенда",
+                  "description": "DVWA практика",
+                  "youtubeVideo": "Полный разбор DVWA: от низкого до высокого уровня безопасности",
+                  "whatToDo": "Установить DVWA (Damn Vulnerable Web App) на свою виртуальную машину. На уровне Low найти и эксплуатировать: SQL Injection, XSS Reflected, Command Injection.",
+                  "tasks": [
+                    {
+                      "id": "task44",
+                      "text": "Установить DVWA",
+                      "completed": false
+                    },
+                    {
+                      "id": "task45",
+                      "text": "Эксплуатировать SQL Injection",
+                      "completed": false
+                    },
+                    {
+                      "id": "task46",
+                      "text": "Эксплуатировать XSS и Command Injection",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day136-138",
+                  "dayRange": "136-138",
+                  "type": "theory",
+                  "title": "Metasploit Framework основы",
+                  "description": "Metasploit",
+                  "youtubeVideo": "Metasploit Framework для начинающих: установка и первые эксплойты",
+                  "whatToUnderstand": "Как использовать готовые эксплойты для эксплуатации уязвимостей",
+                  "tasks": []
+                },
+                {
+                  "id": "day139-142",
+                  "dayRange": "139-142",
+                  "type": "practice",
+                  "title": "Работа с Metasploit",
+                  "description": "Практика Metasploit",
+                  "youtubeVideo": "Metasploit: полный разбор от поиска до эксплуатации",
+                  "whatToDo": "1) Установить Metasploit Framework. 2) Найти уязвимую машину на TryHackMe. 3) Использовать Metasploit для получения reverse shell. 4) Изучить основные команды (search, use, set, exploit).",
+                  "tasks": [
+                    {
+                      "id": "task47",
+                      "text": "Установить Metasploit",
+                      "completed": false
+                    },
+                    {
+                      "id": "task48",
+                      "text": "Получить reverse shell",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day143-145",
+                  "dayRange": "143-145",
+                  "type": "theory",
+                  "title": "Основы веб-приложений (HTML, JavaScript базово)",
+                  "description": "Веб-технологии",
+                  "youtubeVideo": "HTML и JavaScript для пентестеров: минимум для понимания веб-уязвимостей",
+                  "whatToUnderstand": "Как устроены веб-страницы, что такое DOM, как работает JavaScript",
+                  "tasks": []
+                },
+                {
+                  "id": "day146-147",
+                  "dayRange": "146-147",
+                  "type": "practice",
+                  "title": "Анализ веб-приложения",
+                  "description": "Анализ веб-приложений",
+                  "youtubeVideo": "Анализ веб-приложения для пентеста: инструменты и методы",
+                  "whatToDo": "Открыть любой сайт в браузере, изучить исходный код (F12), найти формы, JavaScript-код, понять структуру запросов.",
+                  "tasks": [
+                    {
+                      "id": "task49",
+                      "text": "Изучить исходный код сайта",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "month5",
+          "name": "МЕСЯЦ 5: УГЛУБЛЕННЫЙ ПЕНТЕСТ И АНАЛИЗ",
+          "weeks": [
+            {
+              "id": "week1-2-htb",
+              "name": "НЕДЕЛЯ 1-2: HACKTHEBOX STARTING POINT",
+              "days": [
+                {
+                  "id": "day148-150",
+                  "dayRange": "148-150",
+                  "type": "theory",
+                  "title": "Active Directory основы",
+                  "description": "Active Directory",
+                  "youtubeVideo": "Active Directory для пентестеров: основы за 30 минут",
+                  "whatToUnderstand": "Что такое домен, контроллер домена, пользователи и группы",
+                  "tasks": []
+                },
+                {
+                  "id": "day151-157",
+                  "dayRange": "151-157",
+                  "type": "practice",
+                  "title": "HackTheBox Starting Point",
+                  "description": "HTB Starting Point",
+                  "youtubeVideo": "HackTheBox Starting Point полный разбор всех машин",
+                  "whatToDo": "Зарегистрироваться на hackthebox.com. Купить подписку Starting Point. Пройти все машины. ВЕСТИ ДЕТАЛЬНЫЕ ЗАМЕТКИ в формате: IP → найденные порты → найденные уязвимости → использованный эксплойт → полученный флаг.",
+                  "tasks": [
+                    {
+                      "id": "task50",
+                      "text": "Зарегистрироваться на HackTheBox",
+                      "completed": false
+                    },
+                    {
+                      "id": "task51",
+                      "text": "Пройти все машины Starting Point",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day158-160",
+                  "dayRange": "158-160",
+                  "type": "theory",
+                  "title": "Криптография для пентеста",
+                  "description": "Криптография",
+                  "youtubeVideo": "Криптография для хакеров: хэши, шифрование, как ломать",
+                  "whatToUnderstand": "Чем хэш отличается от пароля, что такое John the Ripper",
+                  "tasks": []
+                },
+                {
+                  "id": "day161-162",
+                  "dayRange": "161-162",
+                  "type": "practice",
+                  "title": "Взлом паролей",
+                  "description": "Взлом паролей",
+                  "youtubeVideo": "John the Ripper и Hashcat: полное руководство для начинающих",
+                  "whatToDo": "1) Создать файл с хэшами (MD5, SHA1). 2) С помощью John the Ripper взломать простые пароли. 3) Создать свой словарь из 100 самых частых паролей.",
+                  "tasks": [
+                    {
+                      "id": "task52",
+                      "text": "Взломать хэши с John the Ripper",
+                      "completed": false
+                    },
+                    {
+                      "id": "task53",
+                      "text": "Создать словарь паролей",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4-htb",
+              "name": "НЕДЕЛЯ 3-4: РЕАЛЬНЫЕ МАШИНЫ HTB",
+              "days": [
+                {
+                  "id": "day163-165",
+                  "dayRange": "163-165",
+                  "type": "theory",
+                  "title": "Привилегия эскалации в Linux и Windows",
+                  "description": "Privilege Escalation",
+                  "youtubeVideo": "Privilege Escalation Linux: 10 основных методов",
+                  "whatToUnderstand": "Как из обычного пользователя стать root/администратором",
+                  "tasks": []
+                },
+                {
+                  "id": "day166-172",
+                  "dayRange": "166-172",
+                  "type": "practice",
+                  "title": "Машины HTB сложности Easy",
+                  "description": "HTB Easy машины",
+                  "youtubeVideo": "HackTheBox машина [Имя машины] полный разбор без спойлеров",
+                  "whatToDo": "Выбрать 2 машины сложности Easy на HackTheBox. Решить их САМОСТОЯТЕЛЬНО в течение 2-3 дней на каждую. Только потом смотреть разбор. Примеры машин: \"Blue\", \"Meow\", \"Fawn\".",
+                  "tasks": [
+                    {
+                      "id": "task54",
+                      "text": "Решить первую Easy машину",
+                      "completed": false
+                    },
+                    {
+                      "id": "task55",
+                      "text": "Решить вторую Easy машину",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day173-175",
+                  "dayRange": "173-175",
+                  "type": "theory",
+                  "title": "PowerShell для Windows пентеста",
+                  "description": "PowerShell",
+                  "youtubeVideo": "PowerShell для пентестеров: основы и полезные команды",
+                  "whatToUnderstand": "Как использовать PowerShell для разведки и эксплуатации в Windows-средах",
+                  "tasks": []
+                },
+                {
+                  "id": "day176-177",
+                  "dayRange": "176-177",
+                  "type": "practice",
+                  "title": "Работа с PowerShell в пентесте",
+                  "description": "PowerShell практика",
+                  "youtubeVideo": "PowerShell в пентесте: разведка и эксплуатация Windows",
+                  "whatToDo": "На Windows-машине (виртуальной) выполнить: 1) Получить информацию о системе (Get-ComputerInfo). 2) Найти все запущенные процессы. 3) Проверить сетевые соединения. 4) Найти файлы с паролями в тексте.",
+                  "tasks": [
+                    {
+                      "id": "task56",
+                      "text": "Выполнить команды PowerShell",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day178-180",
+                  "dayRange": "178-180",
+                  "type": "theory",
+                  "title": "Основы reverse engineering (Ghidra, IDA Free)",
+                  "description": "Reverse Engineering",
+                  "youtubeVideo": "Reverse Engineering для начинающих: Ghidra установка и основы",
+                  "whatToUnderstand": "Как анализировать исполняемые файлы, что такое дизассемблер",
+                  "tasks": []
+                },
+                {
+                  "id": "day181-183",
+                  "dayRange": "181-183",
+                  "type": "practice",
+                  "title": "Анализ простой программы",
+                  "description": "RE практика",
+                  "youtubeVideo": "Ghidra: анализ простой программы для начинающих",
+                  "whatToDo": "1) Установить Ghidra. 2) Скачать простое crackme (учебная программа для взлома). 3) Открыть в Ghidra, найти функцию проверки пароля. 4) Понять логику и найти правильный пароль.",
+                  "tasks": [
+                    {
+                      "id": "task57",
+                      "text": "Установить Ghidra",
+                      "completed": false
+                    },
+                    {
+                      "id": "task58",
+                      "text": "Проанализировать crackme",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day184-186",
+                  "dayRange": "184-186",
+                  "type": "theory",
+                  "title": "Составление отчета о пентесте",
+                  "description": "Отчеты",
+                  "youtubeVideo": "Как писать профессиональный отчет о пентесте: структура и пример",
+                  "whatToUnderstand": "Как оформить результаты для заказчика",
+                  "tasks": []
+                },
+                {
+                  "id": "day187-189",
+                  "dayRange": "187-189",
+                  "type": "practice",
+                  "title": "Написание отчета",
+                  "description": "Практика отчетов",
+                  "youtubeVideo": "Создаем шаблон отчета о пентесте в Word/Google Docs",
+                  "whatToDo": "Оформить полный отчет по одной из решенных машин HTB: описание, методология, найденные уязвимости, доказательства, рекомендации по исправлению.",
+                  "tasks": [
+                    {
+                      "id": "task59",
+                      "text": "Написать отчет по HTB машине",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "month6",
+          "name": "МЕСЯЦ 6: BLUE TEAM И ЗАЩИТА (SOC АНАЛИТИК)",
+          "weeks": [
+            {
+              "id": "week1-2-blue",
+              "name": "НЕДЕЛЯ 1-2: СОЗДАНИЕ ЛАБОРАТОРИИ SOC",
+              "days": [
+                {
+                  "id": "day190-192",
+                  "dayRange": "190-192",
+                  "type": "theory",
+                  "title": "Что такое SOC и SIEM",
+                  "description": "SOC и SIEM",
+                  "youtubeVideo": "SOC (Security Operations Center) для начинающих: что такое SIEM",
+                  "whatToUnderstand": "Как работают аналитики, что такое инциденты и алерты",
+                  "tasks": []
+                },
+                {
+                  "id": "day193-199",
+                  "dayRange": "193-199",
+                  "type": "practice",
+                  "title": "Развертывание Wazuh SIEM",
+                  "description": "Wazuh установка",
+                  "youtubeVideo": "Установка Wazuh SIEM с нуля: полное руководство 2024",
+                  "whatToDo": "1) Установить Wazuh сервер на Ubuntu в VirtualBox. 2) Установить Wazuh агент на Windows 10 виртуальную машину. 3) Настроить отправку логов с Windows на сервер. 4) В интерфейсе Wazuh увидеть события с Windows.",
+                  "tasks": [
+                    {
+                      "id": "task60",
+                      "text": "Установить Wazuh сервер",
+                      "completed": false
+                    },
+                    {
+                      "id": "task61",
+                      "text": "Установить Wazuh агент на Windows",
+                      "completed": false
+                    },
+                    {
+                      "id": "task62",
+                      "text": "Настроить отправку логов",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day200-202",
+                  "dayRange": "200-202",
+                  "type": "theory",
+                  "title": "Анализ логов Windows и Linux",
+                  "description": "Анализ логов",
+                  "youtubeVideo": "Анализ логов Windows Event Log для SOC аналитика",
+                  "whatToUnderstand": "Какие события важны для безопасности (логины, запуск процессов, изменения в реестре)",
+                  "tasks": []
+                },
+                {
+                  "id": "day203-204",
+                  "dayRange": "203-204",
+                  "type": "practice",
+                  "title": "Поиск аномалий в логах",
+                  "description": "Анализ логов",
+                  "youtubeVideo": "Wazuh: создаем правила для обнаружения атак",
+                  "whatToDo": "В Wazuh создать правило для обнаружения множественных неудачных попыток входа на Windows (Event ID 4625). Протестировать, сгенерировав такие события.",
+                  "tasks": [
+                    {
+                      "id": "task63",
+                      "text": "Создать правило в Wazuh",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-4-blue",
+              "name": "НЕДЕЛЯ 3-4: ОБНАРУЖЕНИЕ И РЕАГИРОВАНИЕ НА АТАКИ",
+              "days": [
+                {
+                  "id": "day205-207",
+                  "dayRange": "205-207",
+                  "type": "theory",
+                  "title": "MITRE ATT&CK Framework",
+                  "description": "MITRE ATT&CK",
+                  "youtubeVideo": "MITRE ATT&CK для начинающих: как использовать для защиты",
+                  "whatToUnderstand": "Как классифицируются атаки по тактикам и техникам",
+                  "tasks": []
+                },
+                {
+                  "id": "day208-211",
+                  "dayRange": "208-211",
+                  "type": "practice",
+                  "title": "Симуляция атаки и обнаружение",
+                  "description": "Симуляция атак",
+                  "youtubeVideo": "Симуляция атаки на Active Directory и обнаружение в Wazuh",
+                  "whatToDo": "1) На Windows-машине сымитировать атаку: запустить Mimikatz (в учебных целях), создать нового пользователя. 2) В Wazuh найти соответствующие алерты. 3) Связать атаку с техниками MITRE ATT&CK (например, T1003 - Credential Dumping).",
+                  "tasks": [
+                    {
+                      "id": "task64",
+                      "text": "Сымитировать атаку",
+                      "completed": false
+                    },
+                    {
+                      "id": "task65",
+                      "text": "Найти алерты в Wazuh",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day212-214",
+                  "dayRange": "212-214",
+                  "type": "theory",
+                  "title": "Threat Intelligence и IoC",
+                  "description": "Threat Intelligence",
+                  "youtubeVideo": "Threat Intelligence (угрозовый интеллект) для начинающих",
+                  "whatToUnderstand": "Что такое индикаторы компрометации (IoC) и где их брать",
+                  "tasks": []
+                },
+                {
+                  "id": "day215-217",
+                  "dayRange": "215-217",
+                  "type": "practice",
+                  "title": "Работа с IoC и YARA правилами",
+                  "description": "YARA правила",
+                  "youtubeVideo": "YARA правила для обнаружения вредоносного ПО: практическое руководство",
+                  "whatToDo": "1) Изучить формат YARA правил. 2) Написать простое правило для обнаружения подозрительных строк в файлах. 3) Протестировать правило на примере файла.",
+                  "tasks": [
+                    {
+                      "id": "task66",
+                      "text": "Написать YARA правило",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day218-220",
+                  "dayRange": "218-220",
+                  "type": "theory",
+                  "title": "Основы malware analysis",
+                  "description": "Malware Analysis",
+                  "youtubeVideo": "Malware Analysis для начинающих: статический и динамический анализ",
+                  "whatToUnderstand": "Как анализировать вредоносное ПО, что такое sandbox",
+                  "tasks": []
+                },
+                {
+                  "id": "day221-223",
+                  "dayRange": "221-223",
+                  "type": "practice",
+                  "title": "Анализ простого malware (в изолированной среде)",
+                  "description": "Malware анализ",
+                  "youtubeVideo": "Анализ malware в изолированной среде: практика для начинающих",
+                  "whatToDo": "1) Настроить изолированную виртуальную машину (без сети). 2) Скачать учебный образец malware (например, с сайта malware-traffic-analysis.net). 3) Провести базовый статический анализ (strings, file). ВАЖНО: Только в изолированной среде!",
+                  "tasks": [
+                    {
+                      "id": "task67",
+                      "text": "Настроить изолированную среду",
+                      "completed": false
+                    },
+                    {
+                      "id": "task68",
+                      "text": "Провести статический анализ",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day224-226",
+                  "dayRange": "224-226",
+                  "type": "theory",
+                  "title": "Threat Hunting основы",
+                  "description": "Threat Hunting",
+                  "youtubeVideo": "Threat Hunting для начинающих: как искать скрытые угрозы",
+                  "whatToUnderstand": "Как проактивно искать угрозы, а не только реагировать на алерты",
+                  "tasks": []
+                },
+                {
+                  "id": "day227-229",
+                  "dayRange": "227-229",
+                  "type": "practice",
+                  "title": "Практика threat hunting",
+                  "description": "Threat Hunting",
+                  "youtubeVideo": "Threat Hunting в Wazuh: поиск скрытых угроз на практике",
+                  "whatToDo": "В Wazuh провести поиск: 1) Необычных процессов, запущенных в нерабочее время. 2) Подозрительных сетевых соединений. 3) Изменений в критических файлах системы.",
+                  "tasks": [
+                    {
+                      "id": "task69",
+                      "text": "Провести threat hunting в Wazuh",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day230-232",
+                  "dayRange": "230-232",
+                  "type": "theory",
+                  "title": "Инцидент-менеджмент и реагирование",
+                  "description": "Инцидент-менеджмент",
+                  "youtubeVideo": "Инцидент-менеджмент для SOC: от обнаружения до устранения",
+                  "whatToUnderstand": "Как правильно реагировать на инциденты, этапы обработки",
+                  "tasks": []
+                },
+                {
+                  "id": "day233-235",
+                  "dayRange": "233-235",
+                  "type": "practice",
+                  "title": "Финальный проект Blue Team",
+                  "description": "Финальный проект",
+                  "youtubeVideo": "Полный цикл SOC аналитика: от алерта до отчета",
+                  "whatToDo": "1) Создать в лаборатории \"инцидент\": атака через веб-шелл на сервер. 2) Обнаружить ее в Wazuh. 3) Провести расследование: что сделал злоумышленник, какие файлы изменил. 4) Написать отчет о инциденте с рекомендациями по устранению.",
+                  "tasks": [
+                    {
+                      "id": "task70",
+                      "text": "Создать инцидент в лаборатории",
+                      "completed": false
+                    },
+                    {
+                      "id": "task71",
+                      "text": "Провести расследование",
+                      "completed": false
+                    },
+                    {
+                      "id": "task72",
+                      "text": "Написать отчет об инциденте",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

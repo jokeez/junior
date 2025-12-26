@@ -1,0 +1,27 @@
+{
+  "name": "cybersecurity-learning-platform",
+  "version": "1.0.0",
+  "description": "Платформа для обучения кибербезопасности с планом обучения, отслеживанием прогресса, блогом и портфолио",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "cybersecurity",
+    "learning",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
+

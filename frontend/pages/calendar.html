@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь - CyberSecurity Learning</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberSecurity Learning</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="roadmap.html"><i class="fas fa-map"></i> План обучения</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Прогресс</a></li>
+                <li><a href="calendar.html" class="active"><i class="fas fa-calendar"></i> Календарь</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Блог</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Портфолио</a></li>
+                <li><a href="cheatsheets.html"><i class="fas fa-book"></i> Шпаргалки</a></li>
+                <li><a href="achievements.html"><i class="fas fa-trophy"></i> Достижения</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Настройки</a></li>
+                <li><a href="goals.html"><i class="fas fa-bullseye"></i> Цели</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Календарь обучения</h1>
+                <p>Планирование занятий по дням</p>
+            </div>
+
+            <div class="calendar-controls">
+                <button class="btn btn-secondary" onclick="previousMonth()">
+                    <i class="fas fa-chevron-left"></i> Предыдущий месяц
+                </button>
+                <h2 id="currentMonthYear"></h2>
+                <button class="btn btn-secondary" onclick="nextMonth()">
+                    Следующий месяц <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div id="calendarContainer" class="calendar-container">
+                <!-- Календарь будет загружен динамически -->
+            </div>
+
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <span class="legend-color today"></span>
+                    <span>Сегодня</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color completed"></span>
+                    <span>Выполнено</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color in-progress"></span>
+                    <span>В процессе</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color planned"></span>
+                    <span>Запланировано</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 CyberSecurity Learning Platform. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/calendar.js"></script>
+</body>
+</html>
+
