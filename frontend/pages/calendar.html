@@ -40,14 +40,132 @@
                 <p>Планирование занятий по дням</p>
             </div>
 
+            <!-- Виджет статистики -->
+            <div class="calendar-stats-widget">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="statCompletedDays">0</div>
+                            <div class="stat-label">Выполнено дней</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="statCompletedTasks">0</div>
+                            <div class="stat-label">Выполнено заданий</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="statProgress">0%</div>
+                            <div class="stat-label">Общий прогресс</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="statStreak">0</div>
+                            <div class="stat-label">Дней подряд</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-charts">
+                    <div class="chart-container">
+                        <h3>Активность по неделям</h3>
+                        <canvas id="weeklyActivityChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Продуктивность по дням недели</h3>
+                        <canvas id="dayOfWeekChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
             <div class="calendar-controls">
-                <button class="btn btn-secondary" onclick="previousMonth()">
-                    <i class="fas fa-chevron-left"></i> Предыдущий месяц
-                </button>
-                <h2 id="currentMonthYear"></h2>
-                <button class="btn btn-secondary" onclick="nextMonth()">
-                    Следующий месяц <i class="fas fa-chevron-right"></i>
-                </button>
+                <div class="view-switcher">
+                    <button class="btn btn-secondary" onclick="switchView('month')" id="viewMonthBtn">
+                        <i class="fas fa-calendar-alt"></i> Месяц
+                    </button>
+                    <button class="btn btn-secondary" onclick="switchView('week')" id="viewWeekBtn">
+                        <i class="fas fa-calendar-week"></i> Неделя
+                    </button>
+                    <button class="btn btn-secondary" onclick="switchView('day')" id="viewDayBtn">
+                        <i class="fas fa-calendar-day"></i> День
+                    </button>
+                </div>
+                <div class="navigation-controls">
+                    <button class="btn btn-secondary" onclick="previousPeriod()" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i> <span id="prevBtnText">Предыдущий месяц</span>
+                    </button>
+                    <h2 id="currentMonthYear"></h2>
+                    <button class="btn btn-secondary" onclick="nextPeriod()" id="nextBtn">
+                        <span id="nextBtnText">Следующий месяц</span> <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Панель фильтров и поиска -->
+            <div class="calendar-filter-panel">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="phaseFilter"><i class="fas fa-filter"></i> Фаза:</label>
+                        <select id="phaseFilter" onchange="applyFilters()">
+                            <option value="all">Все фазы</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="statusFilter"><i class="fas fa-check-circle"></i> Статус:</label>
+                        <select id="statusFilter" onchange="applyFilters()">
+                            <option value="all">Все</option>
+                            <option value="completed">Выполнено</option>
+                            <option value="in-progress">В процессе</option>
+                            <option value="planned">Запланировано</option>
+                            <option value="missed">Пропущено</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="typeFilter"><i class="fas fa-tag"></i> Тип:</label>
+                        <select id="typeFilter" onchange="applyFilters()">
+                            <option value="all">Все</option>
+                            <option value="theory">Теория</option>
+                            <option value="practice">Практика</option>
+                            <option value="project">Проект</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="searchInput"><i class="fas fa-search"></i> Поиск:</label>
+                        <input type="text" id="searchInput" placeholder="Поиск по названию..." 
+                               oninput="applyFilters()">
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-secondary btn-sm" onclick="goToToday()">
+                        <i class="fas fa-calendar-day"></i> Сегодня
+                    </button>
+                    <button class="btn btn-secondary btn-sm" onclick="showDatePicker()">
+                        <i class="fas fa-calendar-alt"></i> Выбрать дату
+                    </button>
+                    <button class="btn btn-secondary btn-sm" onclick="resetFilters()">
+                        <i class="fas fa-redo"></i> Сбросить
+                    </button>
+                    <div class="export-dropdown">
+                        <button class="btn btn-secondary btn-sm" onclick="toggleExportMenu()">
+                            <i class="fas fa-download"></i> Экспорт <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="exportMenu" class="export-menu" style="display: none;">
+                            <button onclick="exportToICal()"><i class="fas fa-calendar"></i> Экспорт в iCal</button>
+                            <button onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> Экспорт в PDF</button>
+                            <button onclick="exportToCSV()"><i class="fas fa-file-csv"></i> Экспорт в CSV</button>
+                            <button onclick="exportToJSON()"><i class="fas fa-file-code"></i> Экспорт в JSON</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="showCalendarSettings()">
+                        <i class="fas fa-cog"></i> Настройки
+                    </button>
+                </div>
             </div>
 
             <div id="calendarContainer" class="calendar-container">
@@ -75,14 +193,97 @@
         </div>
     </main>
 
+    <!-- Модальное окно настроек календаря -->
+    <div id="settingsModal" class="calendar-modal">
+        <div class="calendar-modal-content" style="max-width: 600px;">
+            <div class="calendar-modal-header">
+                <h2>Настройки календаря</h2>
+                <button class="calendar-modal-close" onclick="closeSettingsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="calendar-modal-body">
+                <div class="settings-group">
+                    <label for="startDate">Дата начала обучения:</label>
+                    <input type="date" id="startDate" onchange="updateStartDate()">
+                </div>
+                <div class="settings-group">
+                    <label for="firstDayOfWeek">Первый день недели:</label>
+                    <select id="firstDayOfWeek" onchange="updateFirstDayOfWeek()">
+                        <option value="1">Понедельник</option>
+                        <option value="0">Воскресенье</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label for="weekDays">Рабочая неделя:</label>
+                    <select id="weekDays" onchange="updateWeekDays()">
+                        <option value="7">7 дней</option>
+                        <option value="6">6 дней</option>
+                        <option value="5">5 дней</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label for="density">Плотность отображения:</label>
+                    <select id="density" onchange="updateDensity()">
+                        <option value="compact">Компактный</option>
+                        <option value="normal" selected>Обычный</option>
+                        <option value="detailed">Детальный</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label>
+                        <input type="checkbox" id="hideWeekends" onchange="updateHideWeekends()">
+                        Скрыть выходные дни
+                    </label>
+                </div>
+            </div>
+            <div class="calendar-modal-footer">
+                <button class="btn btn-secondary" onclick="closeSettingsModal()">Закрыть</button>
+                <button class="btn btn-primary" onclick="resetCalendarSettings()">Сбросить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с деталями дня -->
+    <div id="dayModal" class="calendar-modal">
+        <div class="calendar-modal-content">
+            <div class="calendar-modal-header">
+                <h2 id="modalDayTitle">Детали дня</h2>
+                <button class="calendar-modal-close" onclick="closeDayModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="calendar-modal-body" id="modalDayBody">
+                <!-- Контент будет загружен динамически -->
+            </div>
+            <div class="calendar-modal-footer">
+                <button class="btn btn-secondary" onclick="closeDayModal()">Закрыть</button>
+                <button class="btn btn-primary" id="modalCompleteBtn" onclick="completeDayFromModal()">
+                    <i class="fas fa-check"></i> Отметить выполненным
+                </button>
+                <button class="btn btn-secondary" id="modalOpenRoadmapBtn" onclick="openInRoadmap()">
+                    <i class="fas fa-external-link-alt"></i> Открыть в плане
+                </button>
+                <button class="btn btn-secondary" onclick="shareDay()">
+                    <i class="fas fa-share"></i> Поделиться
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 CyberSecurity Learning Platform. Все права защищены.</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="../js/app.js"></script>
     <script src="../js/progress.js"></script>
+    <script src="../js/gamification.js"></script>
+    <script src="../js/goals-deadlines.js"></script>
+    <script src="../js/achievements.js"></script>
     <script src="../js/calendar.js"></script>
 </body>
 </html>
