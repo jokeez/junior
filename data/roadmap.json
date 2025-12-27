@@ -1,12 +1,12 @@
 {
   "title": "План обучения кибербезопасности",
   "description": "Полный пошаговый план: теория + практика с видео-инструкциями",
-  "totalDays": 282,
+  "totalDays": 317,
   "phases": [
     {
       "id": "phase0",
       "name": "ФАЗА 0: ОСНОВЫ IT",
-      "duration": 142,
+      "duration": 177,
       "months": [
         {
           "id": "month1",
@@ -1473,6 +1473,468 @@
               }
             ]
           }
+        },
+        {
+          "id": "month3-6",
+          "name": "МЕСЯЦ 3.6: БАЗОВОЕ ПРОГРАММИРОВАНИЕ НА C/C++",
+          "weeks": [
+            {
+              "id": "week1-cpp",
+              "name": "НЕДЕЛЯ 1: ОСНОВЫ C/C++",
+              "days": [
+                {
+                  "id": "day154-155",
+                  "dayRange": "154-155",
+                  "type": "theory",
+                  "title": "Введение в C/C++, переменные, типы данных",
+                  "description": "Основы C/C++",
+                  "youtubeVideo": "C++ для начинающих: установка компилятора, первая программа",
+                  "whatToUnderstand": "Чем C/C++ отличается от Python, как работает компиляция, базовые типы данных (int, float, char, bool)",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-1",
+                      "text": "Записать основные типы данных C++: int, float, double, char, bool и их размеры",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-2",
+                      "text": "Объяснить разницу между объявлением и инициализацией переменной",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-3",
+                      "text": "Определить: что такое компиляция и зачем она нужна"
+                    }
+                  ]
+                },
+                {
+                  "id": "day156-157",
+                  "dayRange": "156-157",
+                  "type": "practice",
+                  "title": "Первые программы на C++",
+                  "description": "Практика C++",
+                  "youtubeVideo": "C++ первая программа: Hello World, компиляция g++",
+                  "whatToDo": "1) Установить g++ (Linux) или MinGW (Windows). 2) Написать программу Hello World. 3) Скомпилировать: g++ hello.cpp -o hello. 4) Запустить программу. 5) Написать программу с переменными разных типов (int, float, char) и вывести их значения.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp1",
+                      "text": "Установить компилятор g++ или MinGW",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp2",
+                      "text": "Написать и скомпилировать программу Hello World",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp3",
+                      "text": "Создать программу с переменными разных типов и выводом",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day158-159",
+                  "dayRange": "158-159",
+                  "type": "theory",
+                  "title": "Условные операторы и циклы в C++",
+                  "description": "Условия и циклы",
+                  "youtubeVideo": "C++ условия и циклы: if/else, for, while для начинающих",
+                  "whatToUnderstand": "Как работают if/else, циклы for и while, в чем отличие от Python",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-4",
+                      "text": "Записать синтаксис условного оператора if/else в C++",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-5",
+                      "text": "Записать синтаксис циклов for и while в C++",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-6",
+                      "text": "Объяснить: когда использовать for, а когда while"
+                    }
+                  ]
+                },
+                {
+                  "id": "day160-161",
+                  "dayRange": "160-161",
+                  "type": "practice",
+                  "title": "Программы с условиями и циклами",
+                  "description": "Практика условий и циклов",
+                  "youtubeVideo": "C++ практика: программы с условиями и циклами",
+                  "whatToDo": "1) Написать программу проверки пароля (if/else). 2) Написать программу, которая выводит числа от 1 до 10 и их квадраты (for). 3) Написать программу подсчета четных чисел в массиве [1,2,3,4,5,6,7,8,9,10] (цикл + условие).",
+                  "tasks": [
+                    {
+                      "id": "task-cpp4",
+                      "text": "Написать программу проверки пароля (if/else)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp5",
+                      "text": "Написать программу с циклом for (числа и их квадраты)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp6",
+                      "text": "Написать программу подсчета четных чисел в массиве",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week2-cpp",
+              "name": "НЕДЕЛЯ 2: УКАЗАТЕЛИ И ПАМЯТЬ",
+              "days": [
+                {
+                  "id": "day162-163",
+                  "dayRange": "162-163",
+                  "type": "theory",
+                  "title": "Указатели - основы",
+                  "description": "Указатели",
+                  "youtubeVideo": "Указатели в C++ для начинающих: что это и зачем нужны",
+                  "whatToUnderstand": "Что такое указатель, как он хранит адрес в памяти, операторы & и *",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-7",
+                      "text": "Объяснить простыми словами: что такое указатель и адрес памяти",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-8",
+                      "text": "Записать разницу между операторами & (адрес) и * (разыменование)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-9",
+                      "text": "Определить: зачем нужны указатели в программировании"
+                    }
+                  ]
+                },
+                {
+                  "id": "day164-165",
+                  "dayRange": "164-165",
+                  "type": "practice",
+                  "title": "Работа с указателями",
+                  "description": "Практика указателей",
+                  "youtubeVideo": "C++ указатели: практические примеры для начинающих",
+                  "whatToDo": "1) Написать программу: создать переменную int, получить её адрес через &, вывести адрес. 2) Создать указатель на int, присвоить ему адрес переменной. 3) Вывести значение через указатель (разыменование *). 4) Изменить значение через указатель и проверить исходную переменную.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp7",
+                      "text": "Написать программу с получением адреса переменной (&)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp8",
+                      "text": "Создать указатель и присвоить ему адрес переменной",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp9",
+                      "text": "Изменить значение переменной через указатель",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day166-167",
+                  "dayRange": "166-167",
+                  "type": "theory",
+                  "title": "Память: стек, куча, управление памятью",
+                  "description": "Управление памятью",
+                  "youtubeVideo": "Память в C++: стек, куча, статическая память для начинающих",
+                  "whatToUnderstand": "Где хранятся переменные, что такое стек и куча, new/delete",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-10",
+                      "text": "Объяснить разницу между стеком (stack) и кучей (heap)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-11",
+                      "text": "Записать синтаксис выделения памяти через new и освобождения через delete",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-12",
+                      "text": "Определить: что будет, если забыть вызвать delete (утечка памяти)"
+                    }
+                  ]
+                },
+                {
+                  "id": "day168-169",
+                  "dayRange": "168-169",
+                  "type": "practice",
+                  "title": "Динамическое выделение памяти",
+                  "description": "Практика new/delete",
+                  "youtubeVideo": "C++ динамическая память: new и delete на практике",
+                  "whatToDo": "1) Написать программу: создать массив из 5 int через new int[5]. 2) Заполнить массив значениями. 3) Вывести все элементы. 4) Освободить память через delete[]. 5) Проверить с Valgrind (Linux) или Dr. Memory (Windows) на утечки памяти.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp10",
+                      "text": "Создать динамический массив через new",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp11",
+                      "text": "Заполнить массив и вывести элементы",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp12",
+                      "text": "Освободить память через delete[] и проверить на утечки",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-cpp",
+              "name": "НЕДЕЛЯ 3: СТРУКТУРЫ И РАБОТА С ФАЙЛАМИ",
+              "days": [
+                {
+                  "id": "day170-171",
+                  "dayRange": "170-171",
+                  "type": "theory",
+                  "title": "Массивы, строки, структуры",
+                  "description": "Структуры данных",
+                  "youtubeVideo": "C++ массивы и структуры: объявление, использование",
+                  "whatToUnderstand": "Как объявлять массивы, работа со строками (char[], string), структуры struct",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-13",
+                      "text": "Записать синтаксис объявления массива int arr[10]",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-14",
+                      "text": "Объяснить разницу между char[] и string в C++",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-15",
+                      "text": "Определить: как создать структуру struct для хранения данных"
+                    }
+                  ]
+                },
+                {
+                  "id": "day172-173",
+                  "dayRange": "172-173",
+                  "type": "practice",
+                  "title": "Работа с массивами и структурами",
+                  "description": "Практика массивов и структур",
+                  "youtubeVideo": "C++ практика: массивы, строки, структуры",
+                  "whatToDo": "1) Создать массив из 10 чисел, заполнить его, найти максимальное значение. 2) Создать структуру Student (name, age, grade). 3) Создать массив из 3 студентов, заполнить данными, вывести информацию о каждом. 4) Найти студента с самым высоким баллом.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp13",
+                      "text": "Создать массив и найти максимальное значение",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp14",
+                      "text": "Создать структуру Student и массив студентов",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp15",
+                      "text": "Найти студента с максимальным баллом",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day184-186",
+                  "dayRange": "184-186",
+                  "type": "theory",
+                  "title": "Работа с файлами в C++",
+                  "description": "Файлы",
+                  "youtubeVideo": "C++ работа с файлами: чтение и запись (fstream)",
+                  "whatToUnderstand": "Как открыть файл, прочитать данные, записать данные (ifstream, ofstream)",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-16",
+                      "text": "Записать синтаксис открытия файла для чтения (ifstream) и записи (ofstream)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-17",
+                      "text": "Объяснить: как проверить, успешно ли открыт файл",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-18",
+                      "text": "Определить: как читать файл построчно или по словам"
+                    }
+                  ]
+                },
+                {
+                  "id": "day176-177",
+                  "dayRange": "176-177",
+                  "type": "practice",
+                  "title": "Программы с файлами",
+                  "description": "Практика работы с файлами",
+                  "youtubeVideo": "C++ файлы: практические примеры чтения и записи",
+                  "whatToDo": "1) Создать текстовый файл data.txt с числами (по одному на строку). 2) Написать программу, которая читает файл и выводит все числа. 3) Написать программу, которая находит сумму всех чисел из файла. 4) Написать программу, которая создает новый файл result.txt и записывает туда результат.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp16",
+                      "text": "Написать программу чтения файла и вывода содержимого",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp17",
+                      "text": "Написать программу подсчета суммы чисел из файла",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp18",
+                      "text": "Написать программу записи результата в новый файл",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week4-cpp",
+              "name": "НЕДЕЛЯ 4: ФУНКЦИИ, ОТЛАДКА И БАЗОВОЕ ПОНИМАНИЕ УЯЗВИМОСТЕЙ",
+              "days": [
+                {
+                  "id": "day190-192",
+                  "dayRange": "190-192",
+                  "type": "theory",
+                  "title": "Функции в C++",
+                  "description": "Функции",
+                  "youtubeVideo": "C++ функции: объявление, параметры, возврат значения",
+                  "whatToUnderstand": "Как объявлять функции, передача параметров по значению и по указателю, возврат значений",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-19",
+                      "text": "Записать синтаксис объявления функции: тип_возврата имя(параметры)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-20",
+                      "text": "Объяснить разницу между передачей по значению и по указателю",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-21",
+                      "text": "Определить: когда использовать void для возвращаемого значения"
+                    }
+                  ]
+                },
+                {
+                  "id": "day180-181",
+                  "dayRange": "180-181",
+                  "type": "practice",
+                  "title": "Программы с функциями",
+                  "description": "Практика функций",
+                  "youtubeVideo": "C++ функции: практические примеры",
+                  "whatToDo": "1) Написать функцию max(int a, int b), которая возвращает большее число. 2) Написать функцию swap(int* a, int* b), которая меняет значения переменных местами через указатели. 3) Написать функцию findMax(int arr[], int size), которая находит максимальный элемент массива. 4) Использовать эти функции в main().",
+                  "tasks": [
+                    {
+                      "id": "task-cpp19",
+                      "text": "Написать функцию max() для двух чисел",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp20",
+                      "text": "Написать функцию swap() с указателями",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp21",
+                      "text": "Написать функцию findMax() для массива",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day182-183",
+                  "dayRange": "182-183",
+                  "type": "theory",
+                  "title": "Компиляция, отладка, базовое понимание buffer overflow",
+                  "description": "Отладка и безопасность",
+                  "youtubeVideo": "GDB отладчик для начинающих: как находить ошибки в C++",
+                  "whatToUnderstand": "Как компилировать с флагами -g, -Wall, использование GDB, что такое buffer overflow на концептуальном уровне",
+                  "tasks": [
+                    {
+                      "id": "task-theory-cpp-22",
+                      "text": "Записать команды GDB: break, run, next, print, continue",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-23",
+                      "text": "Объяснить простыми словами: что такое buffer overflow",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-cpp-24",
+                      "text": "Определить: почему buffer overflow опасен для безопасности"
+                    }
+                  ]
+                },
+                {
+                  "id": "day184-185",
+                  "dayRange": "184-185",
+                  "type": "practice",
+                  "title": "Отладка и компиляция",
+                  "description": "Практика отладки",
+                  "youtubeVideo": "C++ отладка: GDB практическое руководство",
+                  "whatToDo": "1) Скомпилировать программу с флагами -g -Wall: g++ -g -Wall program.cpp -o program. 2) Запустить программу через GDB: gdb ./program. 3) Установить breakpoint на функцию main, запустить программу. 4) Пошагово выполнить программу (next), вывести значение переменной (print). 5) Найти и исправить ошибку в программе с помощью отладчика.",
+                  "tasks": [
+                    {
+                      "id": "task-cpp22",
+                      "text": "Скомпилировать программу с флагами -g -Wall",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp23",
+                      "text": "Запустить программу через GDB и установить breakpoint",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-cpp24",
+                      "text": "Использовать GDB для пошагового выполнения и поиска ошибок",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "finalProject": {
+            "id": "project3-6",
+            "dayRange": "186-188",
+            "title": "Программа-калькулятор на C++",
+            "youtubeVideo": "C++ проект: создаем калькулятор с функциями",
+            "description": "Создать программу-калькулятор: 1) Функции для сложения, вычитания, умножения, деления. 2) Проверка деления на ноль. 3) Ввод двух чисел и операции от пользователя. 4) Вывод результата. 5) Использовать указатели для передачи параметров в функции. 6) Обработка ошибок (неверный ввод, деление на ноль).",
+            "tasks": [
+              {
+                "id": "project3-6-task1",
+                "text": "Создать функции для арифметических операций",
+                "completed": false
+              },
+              {
+                "id": "project3-6-task2",
+                "text": "Реализовать ввод данных от пользователя",
+                "completed": false
+              },
+              {
+                "id": "project3-6-task3",
+                "text": "Добавить обработку ошибок (деление на ноль, неверный ввод)",
+                "completed": false
+              }
+            ]
+          }
         }
       ]
     },
@@ -1490,8 +1952,8 @@
               "name": "НЕДЕЛЯ 1-2: TRYHACKME - ПОДГОТОВКА",
               "days": [
                 {
-                  "id": "day154-156",
-                  "dayRange": "154-156",
+                  "id": "day189-191",
+                  "dayRange": "189-191",
                   "type": "theory",
                   "title": "Принципы безопасности CIA, этичный хакинг",
                   "description": "Основы безопасности",
@@ -1515,8 +1977,8 @@
                   ]
                 },
                 {
-                  "id": "day157-163",
-                  "dayRange": "157-163",
+                  "id": "day192-198",
+                  "dayRange": "192-198",
                   "type": "practice",
                   "title": "TryHackMe - Pre-Security Path",
                   "description": "TryHackMe обучение",
@@ -1536,8 +1998,8 @@
                   ]
                 },
                 {
-                  "id": "day164-166",
-                  "dayRange": "164-166",
+                  "id": "day199-201",
+                  "dayRange": "199-201",
                   "type": "theory",
                   "title": "OWASP Top 10 введение",
                   "description": "OWASP Top 10",
@@ -1561,8 +2023,8 @@
                   ]
                 },
                 {
-                  "id": "day167-170",
-                  "dayRange": "167-170",
+                  "id": "day202-205",
+                  "dayRange": "202-205",
                   "type": "practice",
                   "title": "TryHackMe - Web Application Security",
                   "description": "Веб-безопасность",
@@ -1588,8 +2050,8 @@
               "name": "НЕДЕЛЯ 3-4: ПЕНТЕСТ С НУЛЯ",
               "days": [
                 {
-                  "id": "day171-173",
-                  "dayRange": "171-173",
+                  "id": "day206-208",
+                  "dayRange": "206-208",
                   "type": "theory",
                   "title": "Методология пентеста",
                   "description": "Методология",
@@ -1613,8 +2075,8 @@
                   ]
                 },
                 {
-                  "id": "day174-178",
-                  "dayRange": "174-178",
+                  "id": "day209-213",
+                  "dayRange": "209-213",
                   "type": "practice",
                   "title": "Работа с Nmap и Burp Suite",
                   "description": "Инструменты пентеста",
@@ -1639,8 +2101,8 @@
                   ]
                 },
                 {
-                  "id": "day179-181",
-                  "dayRange": "179-181",
+                  "id": "day214-216",
+                  "dayRange": "214-216",
                   "type": "theory",
                   "title": "SQL-инъекции и XSS",
                   "description": "Веб-уязвимости",
@@ -1664,8 +2126,8 @@
                   ]
                 },
                 {
-                  "id": "day182-183",
-                  "dayRange": "182-183",
+                  "id": "day217-218",
+                  "dayRange": "217-218",
                   "type": "practice",
                   "title": "Взлом учебного стенда",
                   "description": "DVWA практика",
@@ -1690,8 +2152,8 @@
                   ]
                 },
                 {
-                  "id": "day184-186",
-                  "dayRange": "184-186",
+                  "id": "day219-221",
+                  "dayRange": "219-221",
                   "type": "theory",
                   "title": "Metasploit Framework основы",
                   "description": "Metasploit",
@@ -1715,8 +2177,8 @@
                   ]
                 },
                 {
-                  "id": "day187-190",
-                  "dayRange": "187-190",
+                  "id": "day222-225",
+                  "dayRange": "222-225",
                   "type": "practice",
                   "title": "Работа с Metasploit",
                   "description": "Практика Metasploit",
@@ -1748,8 +2210,8 @@
               "name": "НЕДЕЛЯ 1-2: HACKTHEBOX STARTING POINT",
               "days": [
                 {
-                  "id": "day190-192",
-                  "dayRange": "190-192",
+                  "id": "day225-227",
+                  "dayRange": "225-227",
                   "type": "theory",
                   "title": "Active Directory основы",
                   "description": "Active Directory",
@@ -1758,8 +2220,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day193-199",
-                  "dayRange": "193-199",
+                  "id": "day228-234",
+                  "dayRange": "228-234",
                   "type": "practice",
                   "title": "HackTheBox Starting Point",
                   "description": "HTB Starting Point",
@@ -1779,8 +2241,8 @@
                   ]
                 },
                 {
-                  "id": "day200-202",
-                  "dayRange": "200-202",
+                  "id": "day235-237",
+                  "dayRange": "235-237",
                   "type": "theory",
                   "title": "Криптография для пентеста",
                   "description": "Криптография",
@@ -1789,8 +2251,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day203-204",
-                  "dayRange": "203-204",
+                  "id": "day238-239",
+                  "dayRange": "238-239",
                   "type": "practice",
                   "title": "Взлом паролей",
                   "description": "Взлом паролей",
@@ -1816,8 +2278,8 @@
               "name": "НЕДЕЛЯ 3-4: РЕАЛЬНЫЕ МАШИНЫ HTB",
               "days": [
                 {
-                  "id": "day205-207",
-                  "dayRange": "205-207",
+                  "id": "day240-242",
+                  "dayRange": "240-242",
                   "type": "theory",
                   "title": "Привилегия эскалации в Linux и Windows",
                   "description": "Privilege Escalation",
@@ -1826,8 +2288,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day208-214",
-                  "dayRange": "208-214",
+                  "id": "day243-249",
+                  "dayRange": "243-249",
                   "type": "practice",
                   "title": "Машины HTB сложности Easy",
                   "description": "HTB Easy машины",
@@ -1847,8 +2309,8 @@
                   ]
                 },
                 {
-                  "id": "day215-217",
-                  "dayRange": "215-217",
+                  "id": "day250-252",
+                  "dayRange": "250-252",
                   "type": "theory",
                   "title": "PowerShell для Windows пентеста",
                   "description": "PowerShell",
@@ -1857,8 +2319,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day218-219",
-                  "dayRange": "218-219",
+                  "id": "day253-254",
+                  "dayRange": "253-254",
                   "type": "practice",
                   "title": "Работа с PowerShell в пентесте",
                   "description": "PowerShell практика",
@@ -1873,8 +2335,8 @@
                   ]
                 },
                 {
-                  "id": "day220-222",
-                  "dayRange": "220-222",
+                  "id": "day255-257",
+                  "dayRange": "255-257",
                   "type": "theory",
                   "title": "Основы reverse engineering (Ghidra, IDA Free)",
                   "description": "Reverse Engineering",
@@ -1883,8 +2345,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day223-225",
-                  "dayRange": "223-225",
+                  "id": "day258-260",
+                  "dayRange": "258-260",
                   "type": "practice",
                   "title": "Анализ простой программы",
                   "description": "RE практика",
@@ -1904,8 +2366,8 @@
                   ]
                 },
                 {
-                  "id": "day226-228",
-                  "dayRange": "226-228",
+                  "id": "day261-263",
+                  "dayRange": "261-263",
                   "type": "theory",
                   "title": "Составление отчета о пентесте",
                   "description": "Отчеты",
@@ -1914,8 +2376,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day229-231",
-                  "dayRange": "229-231",
+                  "id": "day264-266",
+                  "dayRange": "264-266",
                   "type": "practice",
                   "title": "Написание отчета",
                   "description": "Практика отчетов",
@@ -1942,8 +2404,8 @@
               "name": "НЕДЕЛЯ 1-2: СОЗДАНИЕ ЛАБОРАТОРИИ SOC",
               "days": [
                 {
-                  "id": "day232-234",
-                  "dayRange": "232-234",
+                  "id": "day267-269",
+                  "dayRange": "267-269",
                   "type": "theory",
                   "title": "Что такое SOC и SIEM",
                   "description": "SOC и SIEM",
@@ -1952,8 +2414,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day235-241",
-                  "dayRange": "235-241",
+                  "id": "day270-276",
+                  "dayRange": "270-276",
                   "type": "practice",
                   "title": "Развертывание Wazuh SIEM",
                   "description": "Wazuh установка",
@@ -1978,8 +2440,8 @@
                   ]
                 },
                 {
-                  "id": "day242-244",
-                  "dayRange": "242-244",
+                  "id": "day277-279",
+                  "dayRange": "277-279",
                   "type": "theory",
                   "title": "Анализ логов Windows и Linux",
                   "description": "Анализ логов",
@@ -1988,8 +2450,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day245-246",
-                  "dayRange": "245-246",
+                  "id": "day280-281",
+                  "dayRange": "280-281",
                   "type": "practice",
                   "title": "Поиск аномалий в логах",
                   "description": "Анализ логов",
@@ -2010,8 +2472,8 @@
               "name": "НЕДЕЛЯ 3-4: ОБНАРУЖЕНИЕ И РЕАГИРОВАНИЕ НА АТАКИ",
               "days": [
                 {
-                  "id": "day247-249",
-                  "dayRange": "247-249",
+                  "id": "day282-284",
+                  "dayRange": "282-284",
                   "type": "theory",
                   "title": "MITRE ATT&CK Framework",
                   "description": "MITRE ATT&CK",
@@ -2020,8 +2482,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day250-253",
-                  "dayRange": "250-253",
+                  "id": "day285-288",
+                  "dayRange": "285-288",
                   "type": "practice",
                   "title": "Симуляция атаки и обнаружение",
                   "description": "Симуляция атак",
@@ -2041,8 +2503,8 @@
                   ]
                 },
                 {
-                  "id": "day254-256",
-                  "dayRange": "254-256",
+                  "id": "day289-291",
+                  "dayRange": "289-291",
                   "type": "theory",
                   "title": "Threat Intelligence и IoC",
                   "description": "Threat Intelligence",
@@ -2051,8 +2513,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day257-259",
-                  "dayRange": "257-259",
+                  "id": "day292-294",
+                  "dayRange": "292-294",
                   "type": "practice",
                   "title": "Работа с IoC и YARA правилами",
                   "description": "YARA правила",
@@ -2067,8 +2529,8 @@
                   ]
                 },
                 {
-                  "id": "day260-262",
-                  "dayRange": "260-262",
+                  "id": "day295-297",
+                  "dayRange": "295-297",
                   "type": "theory",
                   "title": "Основы malware analysis",
                   "description": "Malware Analysis",
@@ -2077,8 +2539,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day263-265",
-                  "dayRange": "263-265",
+                  "id": "day298-300",
+                  "dayRange": "298-300",
                   "type": "practice",
                   "title": "Анализ простого malware (в изолированной среде)",
                   "description": "Malware анализ",
@@ -2098,8 +2560,8 @@
                   ]
                 },
                 {
-                  "id": "day266-268",
-                  "dayRange": "266-268",
+                  "id": "day301-303",
+                  "dayRange": "301-303",
                   "type": "theory",
                   "title": "Threat Hunting основы",
                   "description": "Threat Hunting",
@@ -2108,8 +2570,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day269-271",
-                  "dayRange": "269-271",
+                  "id": "day304-306",
+                  "dayRange": "304-306",
                   "type": "practice",
                   "title": "Практика threat hunting",
                   "description": "Threat Hunting",
@@ -2124,8 +2586,8 @@
                   ]
                 },
                 {
-                  "id": "day272-274",
-                  "dayRange": "272-274",
+                  "id": "day307-309",
+                  "dayRange": "307-309",
                   "type": "theory",
                   "title": "Инцидент-менеджмент и реагирование",
                   "description": "Инцидент-менеджмент",
@@ -2134,8 +2596,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day275-277",
-                  "dayRange": "275-277",
+                  "id": "day310-312",
+                  "dayRange": "310-312",
                   "type": "practice",
                   "title": "Финальный проект Blue Team",
                   "description": "Финальный проект",
@@ -2160,8 +2622,8 @@
                   ]
                 },
                 {
-                  "id": "day278-282",
-                  "dayRange": "278-282",
+                  "id": "day313-317",
+                  "dayRange": "313-317",
                   "type": "practice",
                   "title": "Подготовка к собеседованию и резюме",
                   "description": "Карьерная подготовка",
