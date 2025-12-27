@@ -103,11 +103,18 @@ function renderRoadmap() {
                         week.days.forEach((day, dayIndex) => {
                             try {
                                 dayCount++;
-                                if (dayCount % 20 === 0 || dayCount === 88 || dayCount === 89 || dayCount === 90 || dayCount === 111 || dayCount === 112 || dayCount === 113) {
-                                    console.log(`      День ${dayCount}: ${day.id || dayIndex}, range: ${day.dayRange}`);
+                                
+                                // Логируем каждый день вокруг проблемной зоны и каждый 10-й день для отслеживания прогресса
+                                if (dayCount % 10 === 0 || dayCount >= 80 || dayCount === 88 || dayCount === 89 || dayCount === 90) {
+                                    console.log(`      День ${dayCount}: ${day.id || dayIndex}, range: ${day.dayRange}, title: ${day.title ? day.title.substring(0, 30) : 'NO TITLE'}`);
                                 }
                                 
                                 const dayId = day.id;
+                                if (!dayId) {
+                                    console.error(`      ОШИБКА: День ${dayCount} не имеет id!`, day);
+                                    throw new Error(`Day ${dayCount} missing id`);
+                                }
+                                
                                 const isCompleted = ProgressTracker.isTaskCompleted(dayId);
                                 
                                 // Экранируем кавычки в строках для безопасности
@@ -214,9 +221,14 @@ function renderRoadmap() {
             html += `</div>`; // phase-section
         });
 
+        console.log('Генерация HTML завершена. Дней обработано:', dayCount);
+        console.log('Размер сгенерированного HTML:', html.length, 'символов');
+        
         container.innerHTML = html;
         
         console.log('Roadmap rendered successfully. Total days rendered:', dayCount, 'Expected:', roadmapData.totalDays);
+        console.log('Фактически элементов в DOM:', container.querySelectorAll('.day-item').length);
+        console.log('Фактически элементов в DOM:', container.querySelectorAll('.day-item').length);
         
         // Сохраняем общее количество заданий для статистики
         let totalTasksCount = 0;
