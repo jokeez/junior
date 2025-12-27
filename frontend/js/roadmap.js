@@ -54,12 +54,22 @@ async function loadRoadmap() {
 
 // Рендеринг плана
 function renderRoadmap() {
-    if (!roadmapData) return;
+    try {
+        if (!roadmapData) {
+            console.error('roadmapData is null');
+            return;
+        }
 
-    const container = document.getElementById('roadmapContainer');
-    let html = '';
+        const container = document.getElementById('roadmapContainer');
+        if (!container) {
+            console.error('roadmapContainer element not found');
+            return;
+        }
+        
+        let html = '';
+        let dayCount = 0;
 
-    roadmapData.phases.forEach(phase => {
+        roadmapData.phases.forEach((phase, phaseIndex) => {
         html += `
             <div class="phase-section" data-phase="${phase.id}">
                 <div class="phase-header">
@@ -84,44 +94,54 @@ function renderRoadmap() {
                         </div>
                 `;
 
-                week.days.forEach(day => {
-                    const dayId = day.id;
-                    const isCompleted = ProgressTracker.isTaskCompleted(dayId);
-                    
-                    html += `
+                    week.days.forEach((day, dayIndex) => {
+                        try {
+                            dayCount++;
+                            const dayId = day.id;
+                            const isCompleted = ProgressTracker.isTaskCompleted(dayId);
+                            
+                            // Экранируем кавычки в строках для безопасности
+                            const safeTitle = (day.title || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                            const safeDescription = (day.description || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                            const safeYoutubeVideo = day.youtubeVideo ? day.youtubeVideo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                            const safeWhatToUnderstand = day.whatToUnderstand ? day.whatToUnderstand.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                            const safeWhatToDo = day.whatToDo ? day.whatToDo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                            
+                            html += `
                         <div class="day-item" data-day="${dayId}">
                             <div class="day-header">
-                                <span class="day-title">День ${day.dayRange}: ${day.title}</span>
+                                <span class="day-title">День ${day.dayRange}: ${safeTitle}</span>
                                 <span class="day-type ${day.type}">${day.type === 'theory' ? 'Теория' : 'Практика'}</span>
                             </div>
                             <div class="day-content">
-                                <p><strong>Описание:</strong> ${day.description}</p>
+                                <p><strong>Описание:</strong> ${safeDescription}</p>
                                 ${day.youtubeVideo ? `
                                     <div class="youtube-video">
                                         <i class="fab fa-youtube"></i>
-                                        <strong>Видео:</strong> ${day.youtubeVideo}
+                                        <strong>Видео:</strong> ${safeYoutubeVideo}
                                         <div style="margin-top: 1rem;">
-                                            <button class="btn btn-secondary" onclick="searchYouTubeVideo('${day.youtubeVideo}', '${dayId}')">
+                                            <button class="btn btn-secondary" onclick="searchYouTubeVideo('${safeYoutubeVideo}', '${dayId}')">
                                                 <i class="fab fa-youtube"></i> Найти видео на YouTube
                                             </button>
                                             <div id="youtube-embed-${dayId}" style="margin-top: 1rem;"></div>
                                         </div>
                                     </div>
                                 ` : ''}
-                                ${day.whatToUnderstand ? `<p><strong>Что понять:</strong> ${day.whatToUnderstand}</p>` : ''}
-                                ${day.whatToDo ? `<p><strong>Что сделать:</strong> ${day.whatToDo}</p>` : ''}
+                                ${day.whatToUnderstand ? `<p><strong>Что понять:</strong> ${safeWhatToUnderstand}</p>` : ''}
+                                ${day.whatToDo ? `<p><strong>Что сделать:</strong> ${safeWhatToDo}</p>` : ''}
                             </div>
                             ${day.tasks && day.tasks.length > 0 ? `
                                 <div class="tasks-list">
                                     ${day.tasks.map(task => {
                                         const taskCompleted = ProgressTracker.isTaskCompleted(task.id);
+                                        const safeTaskText = (task.text || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
                                         return `
                                             <div class="task-item ${taskCompleted ? 'completed' : ''}">
                                                 <input type="checkbox" 
                                                        id="${task.id}" 
                                                        ${taskCompleted ? 'checked' : ''}
                                                        onchange="toggleTask('${task.id}')">
-                                                <label for="${task.id}">${task.text}</label>
+                                                <label for="${task.id}">${safeTaskText}</label>
                                             </div>
                                         `;
                                     }).join('')}
@@ -129,13 +149,17 @@ function renderRoadmap() {
                             ` : ''}
                         </div>
                     `;
+                        } catch (dayError) {
+                            console.error(`Ошибка рендеринга дня ${day.id || dayIndex}:`, dayError);
+                            html += `<div class="day-item error"><p>Ошибка отображения дня ${day.id || dayIndex}</p></div>`;
+                        }
+                    });
+
+                    html += `</div>`; // week-section
                 });
 
-                html += `</div>`; // week-section
-            });
-
-            // Финальный проект месяца
-            if (month.finalProject) {
+                // Финальный проект месяца
+                if (month.finalProject) {
                 html += `
                     <div class="day-item final-project">
                         <div class="day-header">
@@ -169,31 +193,41 @@ function renderRoadmap() {
                         </div>
                     </div>
                 `;
-            }
+                }
 
-            html += `</div>`; // month-section
-        });
-
-        html += `</div>`; // phase-section
-    });
-
-    container.innerHTML = html;
-    
-    // Сохраняем общее количество заданий для статистики
-    let totalTasksCount = 0;
-    roadmapData.phases.forEach(phase => {
-        phase.months.forEach(month => {
-            month.weeks.forEach(week => {
-                week.days.forEach(day => {
-                    if (day.tasks) totalTasksCount += day.tasks.length;
-                });
+                html += `</div>`; // month-section
             });
-            if (month.finalProject && month.finalProject.tasks) {
-                totalTasksCount += month.finalProject.tasks.length;
-            }
+
+            html += `</div>`; // phase-section
         });
-    });
-    localStorage.setItem('total_tasks_count', totalTasksCount.toString());
+
+        container.innerHTML = html;
+        
+        console.log('Roadmap rendered successfully. Total days rendered:', dayCount, 'Expected:', roadmapData.totalDays);
+        
+        // Сохраняем общее количество заданий для статистики
+        let totalTasksCount = 0;
+        roadmapData.phases.forEach(phase => {
+            phase.months.forEach(month => {
+                month.weeks.forEach(week => {
+                    week.days.forEach(day => {
+                        if (day.tasks) totalTasksCount += day.tasks.length;
+                    });
+                });
+                if (month.finalProject && month.finalProject.tasks) {
+                    totalTasksCount += month.finalProject.tasks.length;
+                }
+            });
+        });
+        localStorage.setItem('total_tasks_count', totalTasksCount.toString());
+    } catch (error) {
+        console.error('Ошибка рендеринга плана обучения:', error);
+        console.error('Stack trace:', error.stack);
+        const container = document.getElementById('roadmapContainer');
+        if (container) {
+            container.innerHTML = '<p style="color: red; padding: 2rem; text-align: center;">Ошибка отображения плана обучения. Проверьте консоль браузера для деталей.</p>';
+        }
+    }
 }
 
 // Поиск и встраивание YouTube видео
