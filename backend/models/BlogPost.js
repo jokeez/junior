@@ -66,3 +66,4 @@ class BlogPost {
 
 module.exports = BlogPost;
 
+

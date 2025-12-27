@@ -69,3 +69,4 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "   - Авторизация (используйте Personal Access Token)" -ForegroundColor White
 }
 
+

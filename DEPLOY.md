@@ -47,3 +47,4 @@ https://jokeez.github.io/YOUR_REPO_NAME/
 - Для полной функциональности с API запустите локально: `npm start`
 - Файл `.nojekyll` в папке `frontend/` отключает обработку Jekyll для правильной работы
 
+

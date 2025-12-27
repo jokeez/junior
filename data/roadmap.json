@@ -1,12 +1,12 @@
 {
   "title": "План обучения кибербезопасности",
   "description": "Полный пошаговый план: теория + практика с видео-инструкциями",
-  "totalDays": 240,
+  "totalDays": 282,
   "phases": [
     {
       "id": "phase0",
       "name": "ФАЗА 0: ОСНОВЫ IT",
-      "duration": 100,
+      "duration": 142,
       "months": [
         {
           "id": "month1",
@@ -675,6 +675,252 @@
               }
             ]
           }
+        },
+        {
+          "id": "month3-5",
+          "name": "МЕСЯЦ 3.5: ВЕБ-ТЕХНОЛОГИИ (HTML И JAVASCRIPT)",
+          "weeks": [
+            {
+              "id": "week1-html",
+              "name": "НЕДЕЛЯ 1: ОСНОВЫ HTML",
+              "days": [
+                {
+                  "id": "day106-108",
+                  "dayRange": "106-108",
+                  "type": "theory",
+                  "title": "Структура HTML документа, основные теги",
+                  "description": "Основы HTML",
+                  "youtubeVideo": "HTML для начинающих: структура документа и основные теги за 30 минут",
+                  "whatToUnderstand": "Как устроен HTML-документ, что такое теги, атрибуты, вложенность элементов",
+                  "tasks": []
+                },
+                {
+                  "id": "day109-111",
+                  "dayRange": "109-111",
+                  "type": "practice",
+                  "title": "Создание первой HTML страницы",
+                  "description": "Практика HTML",
+                  "youtubeVideo": "Создаем первую HTML страницу: структура, заголовки, параграфы",
+                  "whatToDo": "Создать HTML-страницу с информацией о себе. Использовать: заголовки (h1-h6), параграфы (p), списки (ul, ol), ссылки (a), изображения (img).",
+                  "tasks": [
+                    {
+                      "id": "task-html1",
+                      "text": "Создать HTML-страницу с заголовками и параграфами",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-html2",
+                      "text": "Добавить списки и ссылки",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-html3",
+                      "text": "Добавить изображения",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day112-114",
+                  "dayRange": "112-114",
+                  "type": "theory",
+                  "title": "Формы, таблицы, семантика HTML5",
+                  "description": "Продвинутый HTML",
+                  "youtubeVideo": "HTML формы и таблицы: полный разбор для начинающих",
+                  "whatToUnderstand": "Как создавать формы для ввода данных, таблицы, семантические теги HTML5",
+                  "tasks": []
+                },
+                {
+                  "id": "day115-117",
+                  "dayRange": "115-117",
+                  "type": "practice",
+                  "title": "Создание формы обратной связи",
+                  "description": "Практика форм",
+                  "youtubeVideo": "Создаем форму обратной связи на HTML: input, textarea, select",
+                  "whatToDo": "Создать HTML-форму с полями: имя, email, сообщение, выбор темы. Добавить валидацию через атрибуты HTML5 (required, type=\"email\").",
+                  "tasks": [
+                    {
+                      "id": "task-html4",
+                      "text": "Создать форму с полями ввода",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-html5",
+                      "text": "Добавить валидацию полей",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week2-js-basics",
+              "name": "НЕДЕЛЯ 2: ОСНОВЫ JAVASCRIPT",
+              "days": [
+                {
+                  "id": "day118-120",
+                  "dayRange": "118-120",
+                  "type": "theory",
+                  "title": "Переменные, типы данных, функции в JavaScript",
+                  "description": "Основы JavaScript",
+                  "youtubeVideo": "JavaScript для начинающих: переменные, типы данных, функции",
+                  "whatToUnderstand": "Как объявлять переменные (let, const, var), типы данных, как создавать функции",
+                  "tasks": []
+                },
+                {
+                  "id": "day121-123",
+                  "dayRange": "121-123",
+                  "type": "practice",
+                  "title": "Первые JavaScript программы",
+                  "description": "Практика JavaScript",
+                  "youtubeVideo": "Пишем первые программы на JavaScript: калькулятор и валидатор",
+                  "whatToDo": "1) Создать HTML-страницу с калькулятором (сложение, вычитание, умножение, деление). 2) Написать функцию валидации email с использованием регулярных выражений.",
+                  "tasks": [
+                    {
+                      "id": "task-js1",
+                      "text": "Создать калькулятор на JavaScript",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-js2",
+                      "text": "Написать функцию валидации email",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day124-126",
+                  "dayRange": "124-126",
+                  "type": "theory",
+                  "title": "Работа с DOM: выбор элементов, изменение содержимого",
+                  "description": "DOM манипуляции",
+                  "youtubeVideo": "JavaScript DOM: выбор элементов, изменение содержимого страницы",
+                  "whatToUnderstand": "Что такое DOM, как выбирать элементы (getElementById, querySelector), как изменять текст и атрибуты",
+                  "tasks": []
+                },
+                {
+                  "id": "day127-129",
+                  "dayRange": "127-129",
+                  "type": "practice",
+                  "title": "Интерактивная страница с DOM",
+                  "description": "Практика DOM",
+                  "youtubeVideo": "Создаем интерактивную страницу: работа с DOM на практике",
+                  "whatToDo": "Создать страницу с кнопкой, которая при клике меняет цвет фона, текст заголовка и добавляет новый элемент в список.",
+                  "tasks": [
+                    {
+                      "id": "task-js3",
+                      "text": "Создать интерактивную страницу с кнопками",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-js4",
+                      "text": "Реализовать динамическое изменение DOM",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "week3-js-advanced",
+              "name": "НЕДЕЛЯ 3: ПРОДВИНУТЫЙ JAVASCRIPT",
+              "days": [
+                {
+                  "id": "day130-132",
+                  "dayRange": "130-132",
+                  "type": "theory",
+                  "title": "События, обработчики, формы, LocalStorage",
+                  "description": "События и хранение данных",
+                  "youtubeVideo": "JavaScript события: addEventListener, формы, LocalStorage",
+                  "whatToUnderstand": "Как обрабатывать события (click, submit, input), как сохранять данные в браузере",
+                  "tasks": []
+                },
+                {
+                  "id": "day133-135",
+                  "dayRange": "133-135",
+                  "type": "practice",
+                  "title": "Веб-приложение с сохранением данных",
+                  "description": "Практика LocalStorage",
+                  "youtubeVideo": "Создаем ToDo приложение на JavaScript с LocalStorage",
+                  "whatToDo": "Создать простое ToDo приложение: добавление задач, удаление, сохранение в LocalStorage. При перезагрузке страницы задачи должны сохраняться.",
+                  "tasks": [
+                    {
+                      "id": "task-js5",
+                      "text": "Создать ToDo приложение",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-js6",
+                      "text": "Реализовать сохранение в LocalStorage",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day136-138",
+                  "dayRange": "136-138",
+                  "type": "theory",
+                  "title": "AJAX, Fetch API, работа с JSON",
+                  "description": "Асинхронные запросы",
+                  "youtubeVideo": "JavaScript Fetch API: делаем HTTP-запросы, работа с JSON",
+                  "whatToUnderstand": "Как делать запросы к серверу, что такое Promise, async/await",
+                  "tasks": []
+                },
+                {
+                  "id": "day139-141",
+                  "dayRange": "139-141",
+                  "type": "practice",
+                  "title": "Интеграция с внешним API",
+                  "description": "Практика Fetch API",
+                  "youtubeVideo": "Создаем приложение с Fetch API: получаем данные с сервера",
+                  "whatToDo": "Создать страницу, которая получает данные о погоде через бесплатный API (например, OpenWeatherMap) и отображает их. Добавить обработку ошибок.",
+                  "tasks": [
+                    {
+                      "id": "task-js7",
+                      "text": "Создать приложение с Fetch API",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-js8",
+                      "text": "Добавить обработку ошибок",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day142-144",
+                  "dayRange": "142-144",
+                  "type": "theory",
+                  "title": "Cookies, Session Storage, безопасность клиентской стороны",
+                  "description": "Хранение данных и безопасность",
+                  "youtubeVideo": "JavaScript: Cookies, Session Storage, основы безопасности",
+                  "whatToUnderstand": "Разница между LocalStorage, SessionStorage и Cookies, основные уязвимости клиентской стороны",
+                  "tasks": []
+                },
+                {
+                  "id": "day145-147",
+                  "dayRange": "145-147",
+                  "type": "practice",
+                  "title": "Анализ веб-приложения на уязвимости",
+                  "description": "Анализ безопасности",
+                  "youtubeVideo": "Анализ веб-приложения: DevTools, поиск уязвимостей",
+                  "whatToDo": "1) Открыть любое веб-приложение в браузере. 2) Использовать DevTools для анализа: Network tab (запросы), Application tab (LocalStorage, Cookies), Console (JavaScript ошибки). 3) Найти формы, JavaScript-код, понять структуру запросов.",
+                  "tasks": [
+                    {
+                      "id": "task-js9",
+                      "text": "Изучить DevTools: Network и Application",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-js10",
+                      "text": "Проанализировать структуру веб-приложения",
+                      "completed": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -692,8 +938,8 @@
               "name": "НЕДЕЛЯ 1-2: TRYHACKME - ПОДГОТОВКА",
               "days": [
                 {
-                  "id": "day106-108",
-                  "dayRange": "106-108",
+                  "id": "day148-150",
+                  "dayRange": "148-150",
                   "type": "theory",
                   "title": "Принципы безопасности CIA, этичный хакинг",
                   "description": "Основы безопасности",
@@ -702,8 +948,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day109-115",
-                  "dayRange": "109-115",
+                  "id": "day151-157",
+                  "dayRange": "151-157",
                   "type": "practice",
                   "title": "TryHackMe - Pre-Security Path",
                   "description": "TryHackMe обучение",
@@ -723,8 +969,8 @@
                   ]
                 },
                 {
-                  "id": "day116-118",
-                  "dayRange": "116-118",
+                  "id": "day158-160",
+                  "dayRange": "158-160",
                   "type": "theory",
                   "title": "OWASP Top 10 введение",
                   "description": "OWASP Top 10",
@@ -733,8 +979,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day119-122",
-                  "dayRange": "119-122",
+                  "id": "day161-164",
+                  "dayRange": "161-164",
                   "type": "practice",
                   "title": "TryHackMe - Web Application Security",
                   "description": "Веб-безопасность",
@@ -760,8 +1006,8 @@
               "name": "НЕДЕЛЯ 3-4: ПЕНТЕСТ С НУЛЯ",
               "days": [
                 {
-                  "id": "day123-125",
-                  "dayRange": "123-125",
+                  "id": "day165-167",
+                  "dayRange": "165-167",
                   "type": "theory",
                   "title": "Методология пентеста",
                   "description": "Методология",
@@ -770,8 +1016,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day126-130",
-                  "dayRange": "126-130",
+                  "id": "day168-172",
+                  "dayRange": "168-172",
                   "type": "practice",
                   "title": "Работа с Nmap и Burp Suite",
                   "description": "Инструменты пентеста",
@@ -796,8 +1042,8 @@
                   ]
                 },
                 {
-                  "id": "day131-133",
-                  "dayRange": "131-133",
+                  "id": "day173-175",
+                  "dayRange": "173-175",
                   "type": "theory",
                   "title": "SQL-инъекции и XSS",
                   "description": "Веб-уязвимости",
@@ -806,8 +1052,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day134-135",
-                  "dayRange": "134-135",
+                  "id": "day176-177",
+                  "dayRange": "176-177",
                   "type": "practice",
                   "title": "Взлом учебного стенда",
                   "description": "DVWA практика",
@@ -832,8 +1078,8 @@
                   ]
                 },
                 {
-                  "id": "day136-138",
-                  "dayRange": "136-138",
+                  "id": "day178-180",
+                  "dayRange": "178-180",
                   "type": "theory",
                   "title": "Metasploit Framework основы",
                   "description": "Metasploit",
@@ -842,8 +1088,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day139-142",
-                  "dayRange": "139-142",
+                  "id": "day181-184",
+                  "dayRange": "181-184",
                   "type": "practice",
                   "title": "Работа с Metasploit",
                   "description": "Практика Metasploit",
@@ -863,18 +1109,8 @@
                   ]
                 },
                 {
-                  "id": "day143-145",
-                  "dayRange": "143-145",
-                  "type": "theory",
-                  "title": "Основы веб-приложений (HTML, JavaScript базово)",
-                  "description": "Веб-технологии",
-                  "youtubeVideo": "HTML и JavaScript для пентестеров: минимум для понимания веб-уязвимостей",
-                  "whatToUnderstand": "Как устроены веб-страницы, что такое DOM, как работает JavaScript",
-                  "tasks": []
-                },
-                {
-                  "id": "day146-147",
-                  "dayRange": "146-147",
+                  "id": "day185-187",
+                  "dayRange": "185-187",
                   "type": "practice",
                   "title": "Анализ веб-приложения",
                   "description": "Анализ веб-приложений",
@@ -901,8 +1137,8 @@
               "name": "НЕДЕЛЯ 1-2: HACKTHEBOX STARTING POINT",
               "days": [
                 {
-                  "id": "day148-150",
-                  "dayRange": "148-150",
+                  "id": "day190-192",
+                  "dayRange": "190-192",
                   "type": "theory",
                   "title": "Active Directory основы",
                   "description": "Active Directory",
@@ -911,8 +1147,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day151-157",
-                  "dayRange": "151-157",
+                  "id": "day193-199",
+                  "dayRange": "193-199",
                   "type": "practice",
                   "title": "HackTheBox Starting Point",
                   "description": "HTB Starting Point",
@@ -932,8 +1168,8 @@
                   ]
                 },
                 {
-                  "id": "day158-160",
-                  "dayRange": "158-160",
+                  "id": "day200-202",
+                  "dayRange": "200-202",
                   "type": "theory",
                   "title": "Криптография для пентеста",
                   "description": "Криптография",
@@ -942,8 +1178,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day161-162",
-                  "dayRange": "161-162",
+                  "id": "day203-204",
+                  "dayRange": "203-204",
                   "type": "practice",
                   "title": "Взлом паролей",
                   "description": "Взлом паролей",
@@ -969,8 +1205,8 @@
               "name": "НЕДЕЛЯ 3-4: РЕАЛЬНЫЕ МАШИНЫ HTB",
               "days": [
                 {
-                  "id": "day163-165",
-                  "dayRange": "163-165",
+                  "id": "day205-207",
+                  "dayRange": "205-207",
                   "type": "theory",
                   "title": "Привилегия эскалации в Linux и Windows",
                   "description": "Privilege Escalation",
@@ -979,8 +1215,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day166-172",
-                  "dayRange": "166-172",
+                  "id": "day208-214",
+                  "dayRange": "208-214",
                   "type": "practice",
                   "title": "Машины HTB сложности Easy",
                   "description": "HTB Easy машины",
@@ -1000,8 +1236,8 @@
                   ]
                 },
                 {
-                  "id": "day173-175",
-                  "dayRange": "173-175",
+                  "id": "day215-217",
+                  "dayRange": "215-217",
                   "type": "theory",
                   "title": "PowerShell для Windows пентеста",
                   "description": "PowerShell",
@@ -1010,8 +1246,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day176-177",
-                  "dayRange": "176-177",
+                  "id": "day218-219",
+                  "dayRange": "218-219",
                   "type": "practice",
                   "title": "Работа с PowerShell в пентесте",
                   "description": "PowerShell практика",
@@ -1026,8 +1262,8 @@
                   ]
                 },
                 {
-                  "id": "day178-180",
-                  "dayRange": "178-180",
+                  "id": "day220-222",
+                  "dayRange": "220-222",
                   "type": "theory",
                   "title": "Основы reverse engineering (Ghidra, IDA Free)",
                   "description": "Reverse Engineering",
@@ -1036,8 +1272,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day181-183",
-                  "dayRange": "181-183",
+                  "id": "day223-225",
+                  "dayRange": "223-225",
                   "type": "practice",
                   "title": "Анализ простой программы",
                   "description": "RE практика",
@@ -1057,8 +1293,8 @@
                   ]
                 },
                 {
-                  "id": "day184-186",
-                  "dayRange": "184-186",
+                  "id": "day226-228",
+                  "dayRange": "226-228",
                   "type": "theory",
                   "title": "Составление отчета о пентесте",
                   "description": "Отчеты",
@@ -1067,8 +1303,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day187-189",
-                  "dayRange": "187-189",
+                  "id": "day229-231",
+                  "dayRange": "229-231",
                   "type": "practice",
                   "title": "Написание отчета",
                   "description": "Практика отчетов",
@@ -1095,8 +1331,8 @@
               "name": "НЕДЕЛЯ 1-2: СОЗДАНИЕ ЛАБОРАТОРИИ SOC",
               "days": [
                 {
-                  "id": "day190-192",
-                  "dayRange": "190-192",
+                  "id": "day232-234",
+                  "dayRange": "232-234",
                   "type": "theory",
                   "title": "Что такое SOC и SIEM",
                   "description": "SOC и SIEM",
@@ -1105,8 +1341,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day193-199",
-                  "dayRange": "193-199",
+                  "id": "day235-241",
+                  "dayRange": "235-241",
                   "type": "practice",
                   "title": "Развертывание Wazuh SIEM",
                   "description": "Wazuh установка",
@@ -1131,8 +1367,8 @@
                   ]
                 },
                 {
-                  "id": "day200-202",
-                  "dayRange": "200-202",
+                  "id": "day242-244",
+                  "dayRange": "242-244",
                   "type": "theory",
                   "title": "Анализ логов Windows и Linux",
                   "description": "Анализ логов",
@@ -1141,8 +1377,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day203-204",
-                  "dayRange": "203-204",
+                  "id": "day245-246",
+                  "dayRange": "245-246",
                   "type": "practice",
                   "title": "Поиск аномалий в логах",
                   "description": "Анализ логов",
@@ -1163,8 +1399,8 @@
               "name": "НЕДЕЛЯ 3-4: ОБНАРУЖЕНИЕ И РЕАГИРОВАНИЕ НА АТАКИ",
               "days": [
                 {
-                  "id": "day205-207",
-                  "dayRange": "205-207",
+                  "id": "day247-249",
+                  "dayRange": "247-249",
                   "type": "theory",
                   "title": "MITRE ATT&CK Framework",
                   "description": "MITRE ATT&CK",
@@ -1173,8 +1409,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day208-211",
-                  "dayRange": "208-211",
+                  "id": "day250-253",
+                  "dayRange": "250-253",
                   "type": "practice",
                   "title": "Симуляция атаки и обнаружение",
                   "description": "Симуляция атак",
@@ -1194,8 +1430,8 @@
                   ]
                 },
                 {
-                  "id": "day212-214",
-                  "dayRange": "212-214",
+                  "id": "day254-256",
+                  "dayRange": "254-256",
                   "type": "theory",
                   "title": "Threat Intelligence и IoC",
                   "description": "Threat Intelligence",
@@ -1204,8 +1440,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day215-217",
-                  "dayRange": "215-217",
+                  "id": "day257-259",
+                  "dayRange": "257-259",
                   "type": "practice",
                   "title": "Работа с IoC и YARA правилами",
                   "description": "YARA правила",
@@ -1220,8 +1456,8 @@
                   ]
                 },
                 {
-                  "id": "day218-220",
-                  "dayRange": "218-220",
+                  "id": "day260-262",
+                  "dayRange": "260-262",
                   "type": "theory",
                   "title": "Основы malware analysis",
                   "description": "Malware Analysis",
@@ -1230,8 +1466,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day221-223",
-                  "dayRange": "221-223",
+                  "id": "day263-265",
+                  "dayRange": "263-265",
                   "type": "practice",
                   "title": "Анализ простого malware (в изолированной среде)",
                   "description": "Malware анализ",
@@ -1251,8 +1487,8 @@
                   ]
                 },
                 {
-                  "id": "day224-226",
-                  "dayRange": "224-226",
+                  "id": "day266-268",
+                  "dayRange": "266-268",
                   "type": "theory",
                   "title": "Threat Hunting основы",
                   "description": "Threat Hunting",
@@ -1261,8 +1497,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day227-229",
-                  "dayRange": "227-229",
+                  "id": "day269-271",
+                  "dayRange": "269-271",
                   "type": "practice",
                   "title": "Практика threat hunting",
                   "description": "Threat Hunting",
@@ -1277,8 +1513,8 @@
                   ]
                 },
                 {
-                  "id": "day230-232",
-                  "dayRange": "230-232",
+                  "id": "day272-274",
+                  "dayRange": "272-274",
                   "type": "theory",
                   "title": "Инцидент-менеджмент и реагирование",
                   "description": "Инцидент-менеджмент",
@@ -1287,8 +1523,8 @@
                   "tasks": []
                 },
                 {
-                  "id": "day233-235",
-                  "dayRange": "233-235",
+                  "id": "day275-277",
+                  "dayRange": "275-277",
                   "type": "practice",
                   "title": "Финальный проект Blue Team",
                   "description": "Финальный проект",
@@ -1320,4 +1556,5 @@
     }
   ]
 }
+
 

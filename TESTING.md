@@ -91,3 +91,4 @@ SELECT * FROM portfolio_items;
 2. Логи сервера в терминале
 3. Сеть (Network tab) для API запросов
 
+
