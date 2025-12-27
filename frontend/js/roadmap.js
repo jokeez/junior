@@ -70,7 +70,9 @@ function renderRoadmap() {
         let dayCount = 0;
 
         roadmapData.phases.forEach((phase, phaseIndex) => {
-        html += `
+            console.log(`Рендеринг фазы ${phaseIndex + 1}: ${phase.name}`);
+            
+            html += `
             <div class="phase-section" data-phase="${phase.id}">
                 <div class="phase-header">
                     <h2>${phase.name}</h2>
@@ -78,7 +80,8 @@ function renderRoadmap() {
                 </div>
         `;
 
-        phase.months.forEach(month => {
+            phase.months.forEach((month, monthIndex) => {
+                console.log(`  Рендеринг месяца ${monthIndex + 1}: ${month.name}`);
             html += `
                 <div class="month-section">
                     <div class="month-header">
@@ -86,28 +89,35 @@ function renderRoadmap() {
                     </div>
             `;
 
-            month.weeks.forEach(week => {
-                html += `
+                month.weeks.forEach((week, weekIndex) => {
+                    console.log(`    Рендеринг недели ${weekIndex + 1}: ${week.name}, дней: ${week.days ? week.days.length : 0}`);
+                    
+                    html += `
                     <div class="week-section">
                         <div class="week-header">
                             <h4>${week.name}</h4>
                         </div>
                 `;
 
-                    week.days.forEach((day, dayIndex) => {
-                        try {
-                            dayCount++;
-                            const dayId = day.id;
-                            const isCompleted = ProgressTracker.isTaskCompleted(dayId);
-                            
-                            // Экранируем кавычки в строках для безопасности
-                            const safeTitle = (day.title || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-                            const safeDescription = (day.description || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-                            const safeYoutubeVideo = day.youtubeVideo ? day.youtubeVideo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
-                            const safeWhatToUnderstand = day.whatToUnderstand ? day.whatToUnderstand.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
-                            const safeWhatToDo = day.whatToDo ? day.whatToDo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
-                            
-                            html += `
+                    if (week.days) {
+                        week.days.forEach((day, dayIndex) => {
+                            try {
+                                dayCount++;
+                                if (dayCount % 20 === 0 || dayCount === 88 || dayCount === 89 || dayCount === 90 || dayCount === 111 || dayCount === 112 || dayCount === 113) {
+                                    console.log(`      День ${dayCount}: ${day.id || dayIndex}, range: ${day.dayRange}`);
+                                }
+                                
+                                const dayId = day.id;
+                                const isCompleted = ProgressTracker.isTaskCompleted(dayId);
+                                
+                                // Экранируем кавычки в строках для безопасности
+                                const safeTitle = (day.title || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                                const safeDescription = (day.description || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                                const safeYoutubeVideo = day.youtubeVideo ? day.youtubeVideo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                                const safeWhatToUnderstand = day.whatToUnderstand ? day.whatToUnderstand.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                                const safeWhatToDo = day.whatToDo ? day.whatToDo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                                
+                                html += `
                         <div class="day-item" data-day="${dayId}">
                             <div class="day-header">
                                 <span class="day-title">День ${day.dayRange}: ${safeTitle}</span>
@@ -149,18 +159,21 @@ function renderRoadmap() {
                             ` : ''}
                         </div>
                     `;
-                        } catch (dayError) {
-                            console.error(`Ошибка рендеринга дня ${day.id || dayIndex}:`, dayError);
-                            html += `<div class="day-item error"><p>Ошибка отображения дня ${day.id || dayIndex}</p></div>`;
-                        }
-                    });
+                            } catch (dayError) {
+                                console.error(`Ошибка рендеринга дня ${dayCount} (${day.id || dayIndex}):`, dayError);
+                                html += `<div class="day-item error"><p>Ошибка отображения дня ${day.id || dayIndex}</p></div>`;
+                            }
+                        });
+                    } else {
+                        console.warn(`      Неделя ${weekIndex + 1} не имеет дней!`);
+                    }
 
                     html += `</div>`; // week-section
                 });
 
                 // Финальный проект месяца
                 if (month.finalProject) {
-                html += `
+                    html += `
                     <div class="day-item final-project">
                         <div class="day-header">
                             <span class="day-title">Финальный проект: ${month.finalProject.title}</span>
