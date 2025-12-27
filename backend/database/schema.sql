@@ -33,3 +33,4 @@ CREATE INDEX IF NOT EXISTS idx_blog_category ON blog_posts(category);
 CREATE INDEX IF NOT EXISTS idx_portfolio_category ON portfolio_items(category);
 
 
+

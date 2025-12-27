@@ -24,7 +24,22 @@
                   "description": "Изучение модели OSI и TCP/IP",
                   "youtubeVideo": "Модель OSI 7 уровней простыми словами за 15 минут",
                   "whatToUnderstand": "Зачем нужны уровни, чем модель OSI отличается от TCP/IP",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-osi-1",
+                      "text": "Просмотреть видео и записать названия всех 7 уровней OSI",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-osi-2",
+                      "text": "Нарисовать схему: определить к какому уровню относятся WiFi, IP, HTTP, TCP, Ethernet",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-osi-3",
+                      "text": "Сравнить модели OSI и TCP/IP: записать 3 ключевых отличия"
+                    }
+                  ]
                 },
                 {
                   "id": "day4-6",
@@ -65,7 +80,22 @@
                   "description": "Изучение IP-адресации",
                   "youtubeVideo": "Маска подсети за 10 минут: самое простое объяснение",
                   "whatToUnderstand": "Как понять, какие устройства в одной сети, а какие в разных",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-ip-1",
+                      "text": "Определить: находятся ли устройства 192.168.1.10 и 192.168.1.20 в одной сети (маска 255.255.255.0)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-ip-2",
+                      "text": "Перевести маску 255.255.255.0 в формат CIDR (/24)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-ip-3",
+                      "text": "Определить сетевой адрес для IP 10.0.5.100/24"
+                    }
+                  ]
                 },
                 {
                   "id": "day10-12",
@@ -102,7 +132,22 @@
                   "description": "Изучение протоколов DNS и HTTP",
                   "youtubeVideo": "Как работает DNS - подробное объяснение",
                   "whatToUnderstand": "Как браузер находит сайт, что такое DNS-запись",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-dns-1",
+                      "text": "Записать последовательность: что происходит когда браузер запрашивает google.com",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-dns-2",
+                      "text": "Объяснить разницу между HTTP и HTTPS",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-dns-3",
+                      "text": "Определить: какие порты используются для HTTP и HTTPS"
+                    }
+                  ]
                 },
                 {
                   "id": "day16-18",
@@ -133,7 +178,22 @@
                   "description": "Изучение TCP и UDP",
                   "youtubeVideo": "TCP vs UDP: в чем разница на реальных примерах",
                   "whatToUnderstand": "Почему Skype использует UDP, а браузер — TCP",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-tcp-1",
+                      "text": "Записать 3 ключевых отличия TCP от UDP",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-tcp-2",
+                      "text": "Определить для каких сервисов используются порты: 80, 443, 22, 53, 25",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-tcp-3",
+                      "text": "Объяснить: почему видеозвонки используют UDP, а веб-сайты TCP"
+                    }
+                  ]
                 },
                 {
                   "id": "day22-24",
@@ -142,16 +202,26 @@
                   "title": "Анализ портов и трафика",
                   "description": "Работа с Wireshark",
                   "youtubeVideo": "Wireshark для начинающих: первый захват пакетов",
-                  "whatToDo": "1) Установить Wireshark. 2) Запустить захват трафика и зайти на любой сайт. 3) Найти в захвате TCP-пакет с установлением соединения (SYN, SYN-ACK, ACK).",
+                  "whatToDo": "1) Установить Wireshark. 2) Запустить захват трафика (выбрать сетевой интерфейс). 3) Открыть браузер и зайти на любой сайт (например, google.com). 4) Остановить захват. 5) Найти в списке пакетов TCP-пакеты (фильтр: tcp). 6) Найти TCP handshake: найти пакет с флагом SYN, затем SYN-ACK, затем ACK.",
                   "tasks": [
                     {
                       "id": "task9",
-                      "text": "Установить Wireshark",
+                      "text": "Установить Wireshark и выбрать сетевой интерфейс",
+                      "completed": false
+                    },
+                    {
+                      "id": "task9b",
+                      "text": "Запустить захват трафика и зайти на сайт",
                       "completed": false
                     },
                     {
                       "id": "task10",
-                      "text": "Захватить трафик и найти TCP handshake",
+                      "text": "Применить фильтр tcp и найти TCP пакеты",
+                      "completed": false
+                    },
+                    {
+                      "id": "task10b",
+                      "text": "Найти TCP handshake (SYN, SYN-ACK, ACK) в захваченном трафике",
                       "completed": false
                     }
                   ]
@@ -164,7 +234,22 @@
                   "description": "Изучение VLAN",
                   "youtubeVideo": "VLAN для начинающих: что это и зачем нужно",
                   "whatToUnderstand": "Как разделить одну физическую сеть на несколько логических",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-vlan-1",
+                      "text": "Объяснить простыми словами: что такое VLAN и зачем он нужен",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-vlan-2",
+                      "text": "Придумать пример: как разделить офис на 3 отдела с помощью VLAN",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-vlan-3",
+                      "text": "Определить: могут ли устройства из разных VLAN общаться напрямую"
+                    }
+                  ]
                 },
                 {
                   "id": "day28-30",
@@ -231,7 +316,22 @@
                   "description": "Основы Linux",
                   "youtubeVideo": "Почему хакеры используют Kali Linux? Основы Linux для начинающих",
                   "whatToUnderstand": "Почему большинство инструментов безопасности работают на Linux",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-linux-1",
+                      "text": "Записать 3 причины, почему Linux популярен в кибербезопасности",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-linux-2",
+                      "text": "Определить разницу между терминалом и консолью",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-linux-3",
+                      "text": "Изучить список основных дистрибутивов Linux для безопасности (Kali, Parrot, etc.)"
+                    }
+                  ]
                 },
                 {
                   "id": "day34-36",
@@ -267,7 +367,22 @@
                   "description": "Файловая система",
                   "youtubeVideo": "Файловая система Linux: что где лежит (/etc, /var, /home)",
                   "whatToUnderstand": "Для чего нужны каталоги /etc (конфиги), /var (логи), /tmp (временные файлы)",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-fs-1",
+                      "text": "Записать назначение каталогов: /etc, /var, /home, /tmp, /usr, /root",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-fs-2",
+                      "text": "Объяснить разницу между абсолютным и относительным путями в Linux",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-fs-3",
+                      "text": "Определить: где обычно хранятся логи и конфигурационные файлы"
+                    }
+                  ]
                 },
                 {
                   "id": "day40-42",
@@ -309,7 +424,22 @@
                   "description": "Права доступа",
                   "youtubeVideo": "Права доступа в Linux: chmod, chown, chgrp на практике",
                   "whatToUnderstand": "Что означают цифры 755 и 644 в правах доступа",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-perms-1",
+                      "text": "Расшифровать права доступа: 755, 644, 777 (rwx для owner, group, others)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-perms-2",
+                      "text": "Объяснить разницу между chmod, chown и chgrp",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-perms-3",
+                      "text": "Определить: какие права должны быть у исполняемого скрипта"
+                    }
+                  ]
                 },
                 {
                   "id": "day46-48",
@@ -345,7 +475,22 @@
                   "description": "Управление процессами",
                   "youtubeVideo": "Управление процессами в Linux: ps, top, kill, systemctl",
                   "whatToUnderstand": "Как найти \"тяжелый\" процесс и как управлять службами",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-proc-1",
+                      "text": "Записать основные команды для управления процессами: ps, top, kill",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-proc-2",
+                      "text": "Объяснить разницу между сигналами kill -9 и kill -15",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-proc-3",
+                      "text": "Определить: как проверить статус службы и добавить её в автозагрузку"
+                    }
+                  ]
                 },
                 {
                   "id": "day52-55",
@@ -354,21 +499,31 @@
                   "title": "Настройка веб-сервера и мониторинг",
                   "description": "Настройка Nginx",
                   "youtubeVideo": "Установка и настройка Nginx на Ubuntu/Kali Linux за 10 минут",
-                  "whatToDo": "1) Установить Nginx (sudo apt install nginx). 2) Запустить службу, добавить в автозагрузку. 3) Настроить брандмауэр (ufw) для разрешения порта 80. 4) Проверить доступность в браузере.",
+                  "whatToDo": "1) Обновить пакеты (sudo apt update). 2) Установить Nginx (sudo apt install nginx). 3) Запустить службу (sudo systemctl start nginx). 4) Проверить статус службы (sudo systemctl status nginx). 5) Добавить в автозагрузку (sudo systemctl enable nginx). 6) Проверить, что Nginx слушает порт 80 (sudo netstat -tlnp | grep :80). 7) Настроить брандмауэр (sudo ufw allow 80). 8) Проверить доступность в браузере (http://localhost).",
                   "tasks": [
                     {
                       "id": "task22",
-                      "text": "Установить Nginx",
+                      "text": "Установить Nginx (apt update, apt install)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task22b",
+                      "text": "Запустить службу и проверить статус (systemctl start, systemctl status)",
                       "completed": false
                     },
                     {
                       "id": "task23",
-                      "text": "Настроить автозагрузку",
+                      "text": "Добавить службу в автозагрузку (systemctl enable)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task23b",
+                      "text": "Проверить, что порт 80 открыт (netstat или ss)",
                       "completed": false
                     },
                     {
                       "id": "task24",
-                      "text": "Настроить брандмауэр",
+                      "text": "Настроить брандмауэр (ufw allow 80) и проверить в браузере",
                       "completed": false
                     }
                   ]
@@ -381,7 +536,22 @@
                   "description": "SSH основы",
                   "youtubeVideo": "SSH для начинающих: ключи, туннелирование, безопасность",
                   "whatToUnderstand": "Как безопасно подключаться к удаленным серверам, что такое SSH-ключи",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-ssh-1",
+                      "text": "Объяснить разницу между аутентификацией по паролю и по ключу SSH",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-ssh-2",
+                      "text": "Записать базовую команду для SSH подключения: ssh user@host",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-ssh-3",
+                      "text": "Определить: зачем нужны SSH-туннели и портфорвардинг"
+                    }
+                  ]
                 },
                 {
                   "id": "day59-60",
@@ -458,7 +628,22 @@
                   "description": "Основы Python",
                   "youtubeVideo": "Python для начинающих: урок 1 - переменные и типы данных",
                   "whatToUnderstand": "Как хранить данные, что такое строка, число, список",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-python-1",
+                      "text": "Записать примеры объявления переменных: строка, число, список, словарь",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-2",
+                      "text": "Объяснить разницу между типами данных: int, float, str, list, dict",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-3",
+                      "text": "Записать примеры input() и print() для ввода и вывода данных"
+                    }
+                  ]
                 },
                 {
                   "id": "day64-66",
@@ -466,17 +651,22 @@
                   "type": "practice",
                   "title": "Первые программы",
                   "description": "Практика Python",
-                  "youtubeVideo": "Пишем первую программу на Python: калькулятор и конвертер",
-                  "whatToDo": "1) Написать программу, которая запрашивает имя и возраст, затем выводит приветствие. 2) Написать конвертер IP-адреса из десятичного в двоичный формат (только для одного октета).",
+                  "youtubeVideo": "Пишем первую программу на Python: калькулятор и простые примеры",
+                  "whatToDo": "1) Написать программу, которая запрашивает имя и возраст, затем выводит приветствие. 2) Написать простой калькулятор: запросить два числа и операцию (+, -, *, /), вывести результат.",
                   "tasks": [
                     {
                       "id": "task28",
-                      "text": "Написать программу с приветствием",
+                      "text": "Написать программу с приветствием (input, print)",
                       "completed": false
                     },
                     {
                       "id": "task29",
-                      "text": "Написать конвертер IP-адреса",
+                      "text": "Написать простой калькулятор (input, преобразование типов, базовые операции)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task29b",
+                      "text": "Улучшить калькулятор: добавить проверку деления на ноль",
                       "completed": false
                     }
                   ]
@@ -489,25 +679,45 @@
                   "description": "Условия и циклы",
                   "youtubeVideo": "Условные операторы if/elif/else в Python на примерах",
                   "whatToUnderstand": "Как программа принимает решения",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-python-4",
+                      "text": "Записать примеры условных операторов: if, elif, else",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-5",
+                      "text": "Записать примеры циклов: for и while с условиями",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-6",
+                      "text": "Объяснить: когда использовать for, а когда while"
+                    }
+                  ]
                 },
                 {
                   "id": "day70-72",
                   "dayRange": "70-72",
                   "type": "practice",
-                  "title": "Программа для анализа логов",
-                  "description": "Анализ логов",
-                  "youtubeVideo": "Python: парсим логи с помощью условий и циклов",
-                  "whatToDo": "Написать программу, которая читает файл access.log (скачать пример), считает количество запросов с кодом ответа 404 и выводит их список.",
+                  "title": "Программы с условиями и циклами",
+                  "description": "Практика условий и циклов",
+                  "youtubeVideo": "Python: практика условий и циклов на простых задачах",
+                  "whatToDo": "1) Написать программу проверки пароля: запросить пароль, если он равен 'admin123', вывести 'Доступ разрешен', иначе 'Доступ запрещен'. 2) Написать программу, которая выводит числа от 1 до 10 и их квадраты. 3) Написать программу подсчета четных чисел в списке [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].",
                   "tasks": [
                     {
                       "id": "task30",
-                      "text": "Написать программу анализа логов",
+                      "text": "Написать программу проверки пароля (if/else)",
                       "completed": false
                     },
                     {
                       "id": "task31",
-                      "text": "Подсчитать запросы с кодом 404",
+                      "text": "Написать программу с циклом for (числа и их квадраты)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task31b",
+                      "text": "Написать программу подсчета четных чисел в списке (цикл + условие)",
                       "completed": false
                     }
                   ]
@@ -515,16 +725,88 @@
                 {
                   "id": "day73-75",
                   "dayRange": "73-75",
+                  "type": "practice",
+                  "title": "Работа с файлами (базовая)",
+                  "description": "Практика работы с файлами",
+                  "youtubeVideo": "Python: работа с файлами - чтение и запись для начинающих",
+                  "whatToDo": "1) Создать текстовый файл test.txt с содержимым 'Hello World'. 2) Написать программу, которая читает этот файл и выводит его содержимое. 3) Написать программу, которая читает файл построчно и выводит каждую строку с номером.",
+                  "tasks": [
+                    {
+                      "id": "task31c",
+                      "text": "Создать файл test.txt и записать в него текст",
+                      "completed": false
+                    },
+                    {
+                      "id": "task31d",
+                      "text": "Написать программу чтения файла целиком",
+                      "completed": false
+                    },
+                    {
+                      "id": "task31e",
+                      "text": "Написать программу чтения файла построчно (readline/readlines)",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day76-78",
+                  "dayRange": "76-78",
                   "type": "theory",
                   "title": "Обработка ошибок и исключений",
                   "description": "Обработка ошибок",
                   "youtubeVideo": "Обработка ошибок в Python: try/except/finally для начинающих",
                   "whatToUnderstand": "Как программа обрабатывает ошибки, что такое исключения",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-python-7",
+                      "text": "Записать структуру обработки ошибок: try, except, finally",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-8",
+                      "text": "Объяснить разницу между ValueError, FileNotFoundError, KeyError",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-9",
+                      "text": "Определить: зачем нужен блок finally в обработке ошибок"
+                    }
+                  ]
                 },
                 {
-                  "id": "day76-78",
-                  "dayRange": "76-78",
+                  "id": "day79-81",
+                  "dayRange": "79-81",
+                  "type": "practice",
+                  "title": "Программа для анализа логов",
+                  "description": "Анализ логов",
+                  "youtubeVideo": "Python: парсим логи с помощью условий и циклов",
+                  "whatToDo": "1) Скачать пример файла access.log. 2) Написать программу, которая читает файл построчно. 3) Найти все строки с кодом ответа 404. 4) Подсчитать количество таких запросов и вывести их список.",
+                  "tasks": [
+                    {
+                      "id": "task32",
+                      "text": "Скачать файл access.log (пример)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task32b",
+                      "text": "Написать программу чтения логов построчно",
+                      "completed": false
+                    },
+                    {
+                      "id": "task32c",
+                      "text": "Найти строки с кодом 404 (условие if, поиск в строке)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task32d",
+                      "text": "Подсчитать и вывести список всех 404 ошибок",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day82-84",
+                  "dayRange": "82-84",
                   "type": "practice",
                   "title": "Улучшение программ с обработкой ошибок",
                   "description": "Практика обработки ошибок",
@@ -532,8 +814,18 @@
                   "whatToDo": "Улучшить программу анализа логов: добавить обработку ошибок (файл не найден, нет прав доступа, пустой файл). Программа должна корректно работать во всех случаях.",
                   "tasks": [
                     {
-                      "id": "task32",
-                      "text": "Добавить обработку ошибок в программу",
+                      "id": "task33",
+                      "text": "Добавить обработку FileNotFoundError (файл не найден)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task33b",
+                      "text": "Добавить обработку PermissionError (нет прав доступа)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task33c",
+                      "text": "Добавить проверку на пустой файл",
                       "completed": false
                     }
                   ]
@@ -545,53 +837,52 @@
               "name": "НЕДЕЛЯ 3-4: СЕТЕВОЕ ПРОГРАММИРОВАНИЕ ДЛЯ БЕЗОПАСНОСТИ",
               "days": [
                 {
-                  "id": "day79-81",
-                  "dayRange": "79-81",
+                  "id": "day85-87",
+                  "dayRange": "85-87",
                   "type": "theory",
                   "title": "Библиотеки requests и socket",
                   "description": "Сетевое программирование",
                   "youtubeVideo": "Python библиотека requests: делаем HTTP-запросы за 15 минут",
                   "whatToUnderstand": "Как программа может общаться с веб-серверами",
-                  "tasks": []
-                },
-                {
-                  "id": "day82-84",
-                  "dayRange": "82-84",
-                  "type": "practice",
-                  "title": "Сканер открытых портов",
-                  "description": "Сканер портов",
-                  "youtubeVideo": "Пишем сканер портов на Python с нуля (socket library)",
-                  "whatToDo": "Написать скрипт, который сканирует диапазон портов на localhost (127.0.0.1) и выводит список открытых. Добавить таймаут 1 секунду.",
                   "tasks": [
                     {
-                      "id": "task33",
-                      "text": "Написать сканер портов",
+                      "id": "task-theory-python-10",
+                      "text": "Записать базовый пример использования requests.get() для HTTP-запроса",
                       "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-11",
+                      "text": "Объяснить разницу между библиотеками requests и socket",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-12",
+                      "text": "Определить: как получить код ответа и содержимое ответа из requests"
                     }
                   ]
-                },
-                {
-                  "id": "day85-87",
-                  "dayRange": "85-87",
-                  "type": "theory",
-                  "title": "Работа с файлами и аргументами командной строки",
-                  "description": "Файлы и аргументы",
-                  "youtubeVideo": "Python: работа с файлами, чтение и запись + argparse",
-                  "whatToUnderstand": "Как скрипт получает параметры при запуске",
-                  "tasks": []
                 },
                 {
                   "id": "day88-90",
                   "dayRange": "88-90",
                   "type": "practice",
-                  "title": "Утилита для проверки сайтов",
-                  "description": "Проверка сайтов",
-                  "youtubeVideo": "Пишем утилиту для проверки доступности сайтов на Python",
-                  "whatToDo": "Написать скрипт site_checker.py, который принимает файл со списком URL и проверяет их доступность (код ответа 200), результат сохраняет в CSV-файл.",
+                  "title": "Работа с HTTP-запросами",
+                  "description": "Практика requests",
+                  "youtubeVideo": "Python requests: практические примеры HTTP-запросов",
+                  "whatToDo": "1) Установить библиотеку requests (pip install requests). 2) Написать программу, которая делает GET-запрос к httpbin.org/get и выводит ответ. 3) Получить код ответа и вывести его. 4) Получить содержимое ответа в формате JSON и вывести его.",
                   "tasks": [
                     {
                       "id": "task34",
-                      "text": "Написать site_checker.py",
+                      "text": "Установить библиотеку requests",
+                      "completed": false
+                    },
+                    {
+                      "id": "task34b",
+                      "text": "Написать программу с GET-запросом к httpbin.org/get",
+                      "completed": false
+                    },
+                    {
+                      "id": "task34c",
+                      "text": "Вывести код ответа и содержимое JSON",
                       "completed": false
                     }
                   ]
@@ -599,51 +890,183 @@
                 {
                   "id": "day91-93",
                   "dayRange": "91-93",
-                  "type": "theory",
-                  "title": "Работа с JSON, CSV и регулярными выражениями",
-                  "description": "JSON, CSV, regex",
-                  "youtubeVideo": "Python: работа с JSON и CSV файлами + регулярные выражения",
-                  "whatToUnderstand": "Как парсить структурированные данные, как искать паттерны в тексте",
-                  "tasks": []
+                  "type": "practice",
+                  "title": "Сканер открытых портов",
+                  "description": "Сканер портов",
+                  "youtubeVideo": "Пишем сканер портов на Python с нуля (socket library)",
+                  "whatToDo": "1) Импортировать библиотеку socket. 2) Написать функцию проверки одного порта (создать соединение, закрыть). 3) Добавить обработку ошибок (таймаут, закрытый порт). 4) Написать цикл для проверки портов 80, 443, 22, 8080 на localhost.",
+                  "tasks": [
+                    {
+                      "id": "task35",
+                      "text": "Написать функцию проверки одного порта (socket.connect)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task35b",
+                      "text": "Добавить таймаут (socket.settimeout) и обработку ошибок",
+                      "completed": false
+                    },
+                    {
+                      "id": "task35c",
+                      "text": "Добавить цикл для проверки нескольких портов",
+                      "completed": false
+                    }
+                  ]
                 },
                 {
                   "id": "day94-96",
                   "dayRange": "94-96",
-                  "type": "practice",
-                  "title": "Парсер логов с регулярными выражениями",
-                  "description": "Парсинг логов",
-                  "youtubeVideo": "Python: парсим логи с помощью регулярных выражений (regex)",
-                  "whatToDo": "Написать скрипт, который парсит access.log, извлекает IP-адреса, User-Agent и время запроса с помощью регулярных выражений. Сохранить результаты в JSON-файл.",
+                  "type": "theory",
+                  "title": "Работа с файлами и аргументами командной строки",
+                  "description": "Файлы и аргументы",
+                  "youtubeVideo": "Python: работа с файлами, чтение и запись + argparse",
+                  "whatToUnderstand": "Как скрипт получает параметры при запуске",
                   "tasks": [
                     {
-                      "id": "task35",
-                      "text": "Написать парсер логов с regex",
+                      "id": "task-theory-python-13",
+                      "text": "Записать примеры открытия файла: open() с режимами 'r', 'w', 'a'",
                       "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-14",
+                      "text": "Записать пример использования sys.argv для аргументов командной строки",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-15",
+                      "text": "Объяснить разницу между read(), readline() и readlines() для чтения файлов"
                     }
                   ]
                 },
                 {
                   "id": "day97-99",
                   "dayRange": "97-99",
+                  "type": "practice",
+                  "title": "Утилита для проверки сайтов",
+                  "description": "Проверка сайтов",
+                  "youtubeVideo": "Пишем утилиту для проверки доступности сайтов на Python",
+                  "whatToDo": "1) Написать функцию проверки одного URL (requests.get, проверить код 200). 2) Написать программу, которая читает список URL из файла urls.txt (по одному URL на строку). 3) Проверить каждый URL и вывести результат. 4) Сохранить результаты в файл results.txt (URL и статус).",
+                  "tasks": [
+                    {
+                      "id": "task36",
+                      "text": "Написать функцию проверки одного URL",
+                      "completed": false
+                    },
+                    {
+                      "id": "task36b",
+                      "text": "Написать программу чтения URL из файла (readlines)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task36c",
+                      "text": "Добавить цикл проверки всех URL и сохранение результатов",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day100-102",
+                  "dayRange": "100-102",
+                  "type": "theory",
+                  "title": "Работа с JSON, CSV и регулярными выражениями",
+                  "description": "JSON, CSV, regex",
+                  "youtubeVideo": "Python: работа с JSON и CSV файлами + регулярные выражения",
+                  "whatToUnderstand": "Как парсить структурированные данные, как искать паттерны в тексте",
+                  "tasks": [
+                    {
+                      "id": "task-theory-python-16",
+                      "text": "Записать примеры работы с JSON: json.loads() и json.dumps()",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-17",
+                      "text": "Записать простой пример регулярного выражения для поиска email в тексте",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-18",
+                      "text": "Объяснить разницу между JSON и CSV форматами данных"
+                    }
+                  ]
+                },
+                {
+                  "id": "day103-105",
+                  "dayRange": "103-105",
+                  "type": "practice",
+                  "title": "Парсер логов с регулярными выражениями",
+                  "description": "Парсинг логов",
+                  "youtubeVideo": "Python: парсим логи с помощью регулярных выражений (regex)",
+                  "whatToDo": "1) Импортировать библиотеку re. 2) Написать простое регулярное выражение для поиска IP-адреса (например, \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}). 3) Написать программу, которая находит все IP-адреса в файле access.log. 4) Расширить: найти IP, дату и код ответа. 5) Сохранить результаты в JSON-файл.",
+                  "tasks": [
+                    {
+                      "id": "task37",
+                      "text": "Написать регулярное выражение для IP-адреса",
+                      "completed": false
+                    },
+                    {
+                      "id": "task37b",
+                      "text": "Найти все IP-адреса в файле access.log (re.findall)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task37c",
+                      "text": "Расширить поиск: IP, дата, код ответа",
+                      "completed": false
+                    },
+                    {
+                      "id": "task37d",
+                      "text": "Сохранить результаты в JSON-файл (json.dumps)",
+                      "completed": false
+                    }
+                  ]
+                },
+                {
+                  "id": "day106-108",
+                  "dayRange": "106-108",
                   "type": "theory",
                   "title": "Работа с API (REST)",
                   "description": "REST API",
                   "youtubeVideo": "Python requests: работа с REST API для начинающих",
                   "whatToUnderstand": "Как получать данные из веб-API, что такое JSON-ответы",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-python-19",
+                      "text": "Записать пример GET-запроса к REST API с requests.get()",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-20",
+                      "text": "Объяснить разницу между методами HTTP: GET, POST, PUT, DELETE",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-python-21",
+                      "text": "Определить: как обработать JSON-ответ от API и извлечь данные"
+                    }
+                  ]
                 },
                 {
-                  "id": "day100-102",
-                  "dayRange": "100-102",
+                  "id": "day109-111",
+                  "dayRange": "109-111",
                   "type": "practice",
                   "title": "Интеграция с внешним API",
                   "description": "Работа с API",
                   "youtubeVideo": "Python: создаем утилиту для проверки IP через API",
-                  "whatToDo": "Написать скрипт, который принимает IP-адрес и использует бесплатный API (например, ip-api.com) для получения информации о геолокации. Сохранить результат в файл.",
+                  "whatToDo": "1) Использовать бесплатный API ip-api.com (формат: http://ip-api.com/json/IP). 2) Написать программу, которая принимает IP-адрес, делает запрос к API. 3) Получить JSON-ответ и извлечь информацию (страна, город). 4) Вывести результат. 5) Сохранить в файл result.json.",
                   "tasks": [
                     {
-                      "id": "task36",
-                      "text": "Написать скрипт для работы с IP API",
+                      "id": "task38",
+                      "text": "Написать функцию запроса к IP API",
+                      "completed": false
+                    },
+                    {
+                      "id": "task38b",
+                      "text": "Обработать JSON-ответ и извлечь данные (response.json())",
+                      "completed": false
+                    },
+                    {
+                      "id": "task38c",
+                      "text": "Вывести результат и сохранить в JSON-файл",
                       "completed": false
                     }
                   ]
@@ -653,7 +1076,7 @@
           ],
           "finalProject": {
             "id": "project3",
-            "dayRange": "100-105",
+            "dayRange": "112-117",
             "title": "Простой сниффер/анализатор пакетов",
             "youtubeVideo": "Пишем простой сниффер на Python с помощью scapy",
             "description": "1) Установить библиотеку scapy. 2) Написать скрипт, который перехватывает пакеты в сети и выводит информацию об IP-адресах отправителя/получателя. 3) Добавить фильтр для отображения только HTTP-запросов. ВАЖНО: Запускать только в своей домашней сети на своей машине.",
@@ -685,18 +1108,33 @@
               "name": "НЕДЕЛЯ 1: ОСНОВЫ HTML",
               "days": [
                 {
-                  "id": "day106-108",
-                  "dayRange": "106-108",
+                  "id": "day112-114",
+                  "dayRange": "112-114",
                   "type": "theory",
                   "title": "Структура HTML документа, основные теги",
                   "description": "Основы HTML",
                   "youtubeVideo": "HTML для начинающих: структура документа и основные теги за 30 минут",
                   "whatToUnderstand": "Как устроен HTML-документ, что такое теги, атрибуты, вложенность элементов",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-html-1",
+                      "text": "Записать базовую структуру HTML-документа: <!DOCTYPE>, <html>, <head>, <body>",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-html-2",
+                      "text": "Перечислить основные теги: заголовки (h1-h6), параграф (p), ссылка (a), изображение (img)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-html-3",
+                      "text": "Объяснить разницу между блочными и строчными элементами"
+                    }
+                  ]
                 },
                 {
-                  "id": "day109-111",
-                  "dayRange": "109-111",
+                  "id": "day115-117",
+                  "dayRange": "115-117",
                   "type": "practice",
                   "title": "Создание первой HTML страницы",
                   "description": "Практика HTML",
@@ -721,18 +1159,33 @@
                   ]
                 },
                 {
-                  "id": "day112-114",
-                  "dayRange": "112-114",
+                  "id": "day118-120",
+                  "dayRange": "118-120",
                   "type": "theory",
                   "title": "Формы, таблицы, семантика HTML5",
                   "description": "Продвинутый HTML",
                   "youtubeVideo": "HTML формы и таблицы: полный разбор для начинающих",
                   "whatToUnderstand": "Как создавать формы для ввода данных, таблицы, семантические теги HTML5",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-html-4",
+                      "text": "Записать структуру HTML-формы: <form>, <input>, <textarea>, <select>",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-html-5",
+                      "text": "Записать структуру HTML-таблицы: <table>, <tr>, <td>, <th>",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-html-6",
+                      "text": "Перечислить семантические теги HTML5: <header>, <nav>, <main>, <article>, <footer>"
+                    }
+                  ]
                 },
                 {
-                  "id": "day115-117",
-                  "dayRange": "115-117",
+                  "id": "day121-123",
+                  "dayRange": "121-123",
                   "type": "practice",
                   "title": "Создание формы обратной связи",
                   "description": "Практика форм",
@@ -758,18 +1211,33 @@
               "name": "НЕДЕЛЯ 2: ОСНОВЫ JAVASCRIPT",
               "days": [
                 {
-                  "id": "day118-120",
-                  "dayRange": "118-120",
+                  "id": "day124-126",
+                  "dayRange": "124-126",
                   "type": "theory",
                   "title": "Переменные, типы данных, функции в JavaScript",
                   "description": "Основы JavaScript",
                   "youtubeVideo": "JavaScript для начинающих: переменные, типы данных, функции",
                   "whatToUnderstand": "Как объявлять переменные (let, const, var), типы данных, как создавать функции",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-js-1",
+                      "text": "Записать примеры объявления переменных: let, const, var (разница между ними)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-2",
+                      "text": "Записать пример создания функции: function name() {} и стрелочная функция",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-3",
+                      "text": "Перечислить основные типы данных в JavaScript: string, number, boolean, object, array"
+                    }
+                  ]
                 },
                 {
-                  "id": "day121-123",
-                  "dayRange": "121-123",
+                  "id": "day127-129",
+                  "dayRange": "127-129",
                   "type": "practice",
                   "title": "Первые JavaScript программы",
                   "description": "Практика JavaScript",
@@ -789,18 +1257,33 @@
                   ]
                 },
                 {
-                  "id": "day124-126",
-                  "dayRange": "124-126",
+                  "id": "day130-132",
+                  "dayRange": "130-132",
                   "type": "theory",
                   "title": "Работа с DOM: выбор элементов, изменение содержимого",
                   "description": "DOM манипуляции",
                   "youtubeVideo": "JavaScript DOM: выбор элементов, изменение содержимого страницы",
                   "whatToUnderstand": "Что такое DOM, как выбирать элементы (getElementById, querySelector), как изменять текст и атрибуты",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-js-4",
+                      "text": "Записать методы выбора элементов: getElementById(), querySelector(), querySelectorAll()",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-5",
+                      "text": "Записать примеры изменения содержимого: textContent, innerHTML, setAttribute()",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-6",
+                      "text": "Объяснить: что такое DOM и как браузер создает DOM-дерево из HTML"
+                    }
+                  ]
                 },
                 {
-                  "id": "day127-129",
-                  "dayRange": "127-129",
+                  "id": "day133-135",
+                  "dayRange": "133-135",
                   "type": "practice",
                   "title": "Интерактивная страница с DOM",
                   "description": "Практика DOM",
@@ -826,18 +1309,33 @@
               "name": "НЕДЕЛЯ 3: ПРОДВИНУТЫЙ JAVASCRIPT",
               "days": [
                 {
-                  "id": "day130-132",
-                  "dayRange": "130-132",
+                  "id": "day136-138",
+                  "dayRange": "136-138",
                   "type": "theory",
                   "title": "События, обработчики, формы, LocalStorage",
                   "description": "События и хранение данных",
                   "youtubeVideo": "JavaScript события: addEventListener, формы, LocalStorage",
                   "whatToUnderstand": "Как обрабатывать события (click, submit, input), как сохранять данные в браузере",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-js-7",
+                      "text": "Записать пример addEventListener() для обработки события click",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-8",
+                      "text": "Записать примеры работы с LocalStorage: setItem(), getItem(), removeItem()",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-9",
+                      "text": "Перечислить основные события: click, submit, input, change, load"
+                    }
+                  ]
                 },
                 {
-                  "id": "day133-135",
-                  "dayRange": "133-135",
+                  "id": "day139-141",
+                  "dayRange": "139-141",
                   "type": "practice",
                   "title": "Веб-приложение с сохранением данных",
                   "description": "Практика LocalStorage",
@@ -857,18 +1355,33 @@
                   ]
                 },
                 {
-                  "id": "day136-138",
-                  "dayRange": "136-138",
+                  "id": "day142-144",
+                  "dayRange": "142-144",
                   "type": "theory",
                   "title": "AJAX, Fetch API, работа с JSON",
                   "description": "Асинхронные запросы",
                   "youtubeVideo": "JavaScript Fetch API: делаем HTTP-запросы, работа с JSON",
                   "whatToUnderstand": "Как делать запросы к серверу, что такое Promise, async/await",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-js-10",
+                      "text": "Записать базовый пример fetch() для GET-запроса",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-11",
+                      "text": "Объяснить разницу между Promise, .then() и async/await",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-12",
+                      "text": "Записать пример обработки JSON-ответа: response.json()"
+                    }
+                  ]
                 },
                 {
-                  "id": "day139-141",
-                  "dayRange": "139-141",
+                  "id": "day145-147",
+                  "dayRange": "145-147",
                   "type": "practice",
                   "title": "Интеграция с внешним API",
                   "description": "Практика Fetch API",
@@ -888,18 +1401,33 @@
                   ]
                 },
                 {
-                  "id": "day142-144",
-                  "dayRange": "142-144",
+                  "id": "day148-150",
+                  "dayRange": "148-150",
                   "type": "theory",
                   "title": "Cookies, Session Storage, безопасность клиентской стороны",
                   "description": "Хранение данных и безопасность",
                   "youtubeVideo": "JavaScript: Cookies, Session Storage, основы безопасности",
                   "whatToUnderstand": "Разница между LocalStorage, SessionStorage и Cookies, основные уязвимости клиентской стороны",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-js-13",
+                      "text": "Записать разницу между LocalStorage, SessionStorage и Cookies",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-14",
+                      "text": "Перечислить основные уязвимости клиентской стороны: XSS, CSRF",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-js-15",
+                      "text": "Объяснить: почему нельзя хранить пароли в LocalStorage"
+                    }
+                  ]
                 },
                 {
-                  "id": "day145-147",
-                  "dayRange": "145-147",
+                  "id": "day151-153",
+                  "dayRange": "151-153",
                   "type": "practice",
                   "title": "Анализ веб-приложения на уязвимости",
                   "description": "Анализ безопасности",
@@ -938,18 +1466,33 @@
               "name": "НЕДЕЛЯ 1-2: TRYHACKME - ПОДГОТОВКА",
               "days": [
                 {
-                  "id": "day148-150",
-                  "dayRange": "148-150",
+                  "id": "day154-156",
+                  "dayRange": "154-156",
                   "type": "theory",
                   "title": "Принципы безопасности CIA, этичный хакинг",
                   "description": "Основы безопасности",
                   "youtubeVideo": "Основы кибербезопасности: CIA триада и этичный хакинг",
                   "whatToUnderstand": "Чем белый хат отличается от черного, что такое ответственное разглашение",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-security-1",
+                      "text": "Расшифровать триаду CIA: Confidentiality, Integrity, Availability - что означает каждый принцип",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-2",
+                      "text": "Записать разницу между белым хакером (white hat), серым (gray hat) и черным (black hat)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-3",
+                      "text": "Объяснить: что такое ответственное разглашение уязвимостей"
+                    }
+                  ]
                 },
                 {
-                  "id": "day151-157",
-                  "dayRange": "151-157",
+                  "id": "day157-163",
+                  "dayRange": "157-163",
                   "type": "practice",
                   "title": "TryHackMe - Pre-Security Path",
                   "description": "TryHackMe обучение",
@@ -969,18 +1512,33 @@
                   ]
                 },
                 {
-                  "id": "day158-160",
-                  "dayRange": "158-160",
+                  "id": "day164-166",
+                  "dayRange": "164-166",
                   "type": "theory",
                   "title": "OWASP Top 10 введение",
                   "description": "OWASP Top 10",
                   "youtubeVideo": "OWASP Top 10 2021: обзор для начинающих",
                   "whatToUnderstand": "Какие уязвимости встречаются чаще всего",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-security-4",
+                      "text": "Перечислить 5 самых распространенных уязвимостей из OWASP Top 10",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-5",
+                      "text": "Объяснить простыми словами: что такое SQL Injection и XSS",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-6",
+                      "text": "Определить: какую угрозу представляет каждая из этих уязвимостей"
+                    }
+                  ]
                 },
                 {
-                  "id": "day161-164",
-                  "dayRange": "161-164",
+                  "id": "day167-170",
+                  "dayRange": "167-170",
                   "type": "practice",
                   "title": "TryHackMe - Web Application Security",
                   "description": "Веб-безопасность",
@@ -1006,18 +1564,33 @@
               "name": "НЕДЕЛЯ 3-4: ПЕНТЕСТ С НУЛЯ",
               "days": [
                 {
-                  "id": "day165-167",
-                  "dayRange": "165-167",
+                  "id": "day171-173",
+                  "dayRange": "171-173",
                   "type": "theory",
                   "title": "Методология пентеста",
                   "description": "Методология",
                   "youtubeVideo": "Методология пентеста: разведка, сканирование, эксплуатация",
                   "whatToUnderstand": "Из каких этапов состоит профессиональный пентест",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-security-7",
+                      "text": "Записать основные этапы пентеста: Reconnaissance, Scanning, Exploitation, etc.",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-8",
+                      "text": "Объяснить разницу между черным ящиком, белым ящиком и серым ящиком",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-9",
+                      "text": "Определить: что происходит на этапе разведки (reconnaissance)"
+                    }
+                  ]
                 },
                 {
-                  "id": "day168-172",
-                  "dayRange": "168-172",
+                  "id": "day174-178",
+                  "dayRange": "174-178",
                   "type": "practice",
                   "title": "Работа с Nmap и Burp Suite",
                   "description": "Инструменты пентеста",
@@ -1042,18 +1615,33 @@
                   ]
                 },
                 {
-                  "id": "day173-175",
-                  "dayRange": "173-175",
+                  "id": "day179-181",
+                  "dayRange": "179-181",
                   "type": "theory",
                   "title": "SQL-инъекции и XSS",
                   "description": "Веб-уязвимости",
                   "youtubeVideo": "SQL инъекция с нуля: теория и практика на DVWA",
                   "whatToUnderstand": "Как злоумышленник может \"поговорить\" с базой данных через форму",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-security-10",
+                      "text": "Объяснить простыми словами: как работает SQL Injection (пример с кавычками)",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-11",
+                      "text": "Записать разницу между Reflected XSS, Stored XSS и DOM-based XSS",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-12",
+                      "text": "Определить: какие данные могут быть украдены через SQL Injection"
+                    }
+                  ]
                 },
                 {
-                  "id": "day176-177",
-                  "dayRange": "176-177",
+                  "id": "day182-183",
+                  "dayRange": "182-183",
                   "type": "practice",
                   "title": "Взлом учебного стенда",
                   "description": "DVWA практика",
@@ -1078,18 +1666,33 @@
                   ]
                 },
                 {
-                  "id": "day178-180",
-                  "dayRange": "178-180",
+                  "id": "day184-186",
+                  "dayRange": "184-186",
                   "type": "theory",
                   "title": "Metasploit Framework основы",
                   "description": "Metasploit",
                   "youtubeVideo": "Metasploit Framework для начинающих: установка и первые эксплойты",
                   "whatToUnderstand": "Как использовать готовые эксплойты для эксплуатации уязвимостей",
-                  "tasks": []
+                  "tasks": [
+                    {
+                      "id": "task-theory-security-13",
+                      "text": "Записать основные команды Metasploit: search, use, set, exploit",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-14",
+                      "text": "Объяснить разницу между exploit, payload и handler в Metasploit",
+                      "completed": false
+                    },
+                    {
+                      "id": "task-theory-security-15",
+                      "text": "Определить: что такое reverse shell и bind shell"
+                    }
+                  ]
                 },
                 {
-                  "id": "day181-184",
-                  "dayRange": "181-184",
+                  "id": "day187-190",
+                  "dayRange": "187-190",
                   "type": "practice",
                   "title": "Работа с Metasploit",
                   "description": "Практика Metasploit",
@@ -1109,8 +1712,8 @@
                   ]
                 },
                 {
-                  "id": "day185-187",
-                  "dayRange": "185-187",
+                  "id": "day191-193",
+                  "dayRange": "191-193",
                   "type": "practice",
                   "title": "Анализ веб-приложения",
                   "description": "Анализ веб-приложений",
