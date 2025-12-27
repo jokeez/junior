@@ -52,6 +52,14 @@ async function loadRoadmap() {
     }
 }
 
+// Функция для полного экранирования HTML
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 // Рендеринг плана
 function renderRoadmap() {
     try {
@@ -117,12 +125,15 @@ function renderRoadmap() {
                                 
                                 const isCompleted = ProgressTracker.isTaskCompleted(dayId);
                                 
-                                // Экранируем кавычки в строках для безопасности
-                                const safeTitle = (day.title || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-                                const safeDescription = (day.description || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
-                                const safeYoutubeVideo = day.youtubeVideo ? day.youtubeVideo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
-                                const safeWhatToUnderstand = day.whatToUnderstand ? day.whatToUnderstand.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
-                                const safeWhatToDo = day.whatToDo ? day.whatToDo.replace(/'/g, "&#39;").replace(/"/g, "&quot;") : '';
+                                // Экранируем HTML для безопасности (полное экранирование)
+                                const safeTitle = escapeHtml(day.title || '');
+                                const safeDescription = escapeHtml(day.description || '');
+                                const safeYoutubeVideo = escapeHtml(day.youtubeVideo || '');
+                                const safeWhatToUnderstand = escapeHtml(day.whatToUnderstand || '');
+                                const safeWhatToDo = escapeHtml(day.whatToDo || '');
+                                // Для атрибутов onclick нужно дополнительное экранирование
+                                const safeYoutubeVideoForAttr = (day.youtubeVideo || '').replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/\n/g, ' ').replace(/\r/g, '');
+                                const safeDayIdForAttr = dayId.replace(/'/g, "\\'").replace(/"/g, '\\"');
                                 
                                 html += `
                         <div class="day-item" data-day="${dayId}">
@@ -137,7 +148,7 @@ function renderRoadmap() {
                                         <i class="fab fa-youtube"></i>
                                         <strong>Видео:</strong> ${safeYoutubeVideo}
                                         <div style="margin-top: 1rem;">
-                                            <button class="btn btn-secondary" onclick="searchYouTubeVideo('${safeYoutubeVideo}', '${dayId}')">
+                                            <button class="btn btn-secondary" onclick="searchYouTubeVideo('${safeYoutubeVideoForAttr}', '${safeDayIdForAttr}')">
                                                 <i class="fab fa-youtube"></i> Найти видео на YouTube
                                             </button>
                                             <div id="youtube-embed-${dayId}" style="margin-top: 1rem;"></div>
@@ -151,13 +162,14 @@ function renderRoadmap() {
                                 <div class="tasks-list">
                                     ${day.tasks.map(task => {
                                         const taskCompleted = ProgressTracker.isTaskCompleted(task.id);
-                                        const safeTaskText = (task.text || '').replace(/'/g, "&#39;").replace(/"/g, "&quot;");
+                                        const safeTaskText = escapeHtml(task.text || '');
+                                        const safeTaskId = task.id.replace(/'/g, "\\'").replace(/"/g, '\\"');
                                         return `
                                             <div class="task-item ${taskCompleted ? 'completed' : ''}">
                                                 <input type="checkbox" 
                                                        id="${task.id}" 
                                                        ${taskCompleted ? 'checked' : ''}
-                                                       onchange="toggleTask('${task.id}')">
+                                                       onchange="toggleTask('${safeTaskId}')">
                                                 <label for="${task.id}">${safeTaskText}</label>
                                             </div>
                                         `;
@@ -180,31 +192,37 @@ function renderRoadmap() {
 
                 // Финальный проект месяца
                 if (month.finalProject) {
+                    const safeProjectTitle = escapeHtml(month.finalProject.title || '');
+                    const safeProjectDescription = escapeHtml(month.finalProject.description || '');
+                    const safeProjectYoutubeVideo = escapeHtml(month.finalProject.youtubeVideo || '');
+                    
                     html += `
                     <div class="day-item final-project">
                         <div class="day-header">
-                            <span class="day-title">Финальный проект: ${month.finalProject.title}</span>
+                            <span class="day-title">Финальный проект: ${safeProjectTitle}</span>
                             <span class="day-type practice">Проект</span>
                         </div>
                         <div class="day-content">
-                            <p><strong>Описание:</strong> ${month.finalProject.description}</p>
+                            <p><strong>Описание:</strong> ${safeProjectDescription}</p>
                             ${month.finalProject.youtubeVideo ? `
                                 <div class="youtube-video">
                                     <i class="fab fa-youtube"></i>
-                                    <strong>Видео:</strong> ${month.finalProject.youtubeVideo}
+                                    <strong>Видео:</strong> ${safeProjectYoutubeVideo}
                                 </div>
                             ` : ''}
                             ${month.finalProject.tasks && month.finalProject.tasks.length > 0 ? `
                                 <div class="tasks-list">
                                     ${month.finalProject.tasks.map(task => {
                                         const taskCompleted = ProgressTracker.isTaskCompleted(task.id);
+                                        const safeTaskText = escapeHtml(task.text || '');
+                                        const safeTaskId = task.id.replace(/'/g, "\\'").replace(/"/g, '\\"');
                                         return `
                                             <div class="task-item ${taskCompleted ? 'completed' : ''}">
                                                 <input type="checkbox" 
                                                        id="${task.id}" 
                                                        ${taskCompleted ? 'checked' : ''}
-                                                       onchange="toggleTask('${task.id}')">
-                                                <label for="${task.id}">${task.text}</label>
+                                                       onchange="toggleTask('${safeTaskId}')">
+                                                <label for="${task.id}">${safeTaskText}</label>
                                             </div>
                                         `;
                                     }).join('')}
@@ -224,10 +242,29 @@ function renderRoadmap() {
         console.log('Генерация HTML завершена. Дней обработано:', dayCount);
         console.log('Размер сгенерированного HTML:', html.length, 'символов');
         
+        // Проверяем HTML на ошибки перед вставкой
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const parseErrors = doc.querySelectorAll('parsererror');
+        if (parseErrors.length > 0) {
+            console.error('ОШИБКА ПАРСИНГА HTML:', parseErrors[0].textContent);
+            // Показываем место ошибки
+            const errorText = parseErrors[0].textContent;
+            const errorIndex = html.indexOf('parsererror');
+            console.error('Ошибка примерно на позиции:', errorIndex);
+            console.error('HTML вокруг ошибки:', html.substring(Math.max(0, errorIndex - 500), Math.min(html.length, errorIndex + 500)));
+        }
+        
         container.innerHTML = html;
         
+        const renderedItems = container.querySelectorAll('.day-item').length;
         console.log('Roadmap rendered successfully. Total days rendered:', dayCount, 'Expected:', roadmapData.totalDays);
-        console.log('Фактически элементов в DOM:', container.querySelectorAll('.day-item').length);
+        console.log('Фактически элементов в DOM:', renderedItems);
+        
+        if (renderedItems < dayCount) {
+            console.error(`ПРОБЛЕМА: Обработано ${dayCount} дней, но в DOM только ${renderedItems} элементов!`);
+            console.error('HTML сгенерирован некорректно. Проверьте синтаксис HTML после элемента', renderedItems);
+        }
         console.log('Фактически элементов в DOM:', container.querySelectorAll('.day-item').length);
         
         // Сохраняем общее количество заданий для статистики
