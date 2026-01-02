@@ -34,3 +34,5 @@ CREATE INDEX IF NOT EXISTS idx_portfolio_category ON portfolio_items(category);
 
 
 
+
+

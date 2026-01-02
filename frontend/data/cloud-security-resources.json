@@ -1,0 +1,108 @@
+{
+  "title": "Ресурсы для Cloud Security Engineer",
+  "description": "Telegram-каналы, конференции, сообщества, менторы для изучения облачной безопасности в российском стеке",
+  "telegramChannels": [
+    {
+      "name": "Яндекс.Облако Community",
+      "description": "Официальное сообщество Яндекс.Облако",
+      "link": "https://t.me/yandexcloud"
+    },
+    {
+      "name": "VK Cloud Solutions",
+      "description": "Сообщество VK Cloud Solutions",
+      "link": "https://t.me/vkcloud"
+    },
+    {
+      "name": "DevOps & Cloud Security",
+      "description": "Канал по DevOps и облачной безопасности",
+      "link": "https://t.me/devops_security"
+    },
+    {
+      "name": "Kubernetes Russia",
+      "description": "Русскоязычное сообщество Kubernetes",
+      "link": "https://t.me/kubernetes_ru"
+    },
+    {
+      "name": "Cloud Security RU",
+      "description": "Канал по облачной безопасности в РФ",
+      "link": "https://t.me/cloud_security_ru"
+    }
+  ],
+  "conferences": [
+    {
+      "name": "Positive Hack Days",
+      "description": "Крупнейшая конференция по кибербезопасности в России",
+      "website": "https://www.phtd.ru",
+      "topics": ["Cloud Security", "DevSecOps", "Compliance"]
+    },
+    {
+      "name": "Selectel Meetups",
+      "description": "Митапы по облачным технологиям от Selectel",
+      "website": "https://selectel.ru/events",
+      "topics": ["Cloud Infrastructure", "Security"]
+    },
+    {
+      "name": "КРОК Webinars",
+      "description": "Веб-семинары по информационной безопасности",
+      "website": "https://www.croc.ru",
+      "topics": ["Security", "Cloud"]
+    }
+  ],
+  "communities": [
+    {
+      "name": "DevOps Russia",
+      "description": "Русскоязычное сообщество DevOps",
+      "platform": "Telegram, GitHub",
+      "topics": ["DevOps", "Cloud", "Security"]
+    },
+    {
+      "name": "Cloud.ru Community",
+      "description": "Сообщество пользователей VK Cloud",
+      "platform": "Forum, Telegram",
+      "topics": ["VK Cloud", "Cloud Security"]
+    },
+    {
+      "name": "Яндекс.Облако Community",
+      "description": "Сообщество пользователей Яндекс.Облако",
+      "platform": "Forum, Telegram",
+      "topics": ["Яндекс.Облако", "Cloud Security"]
+    }
+  ],
+  "mentors": [
+    {
+      "platform": "LinkedIn",
+      "description": "Поиск менторов через LinkedIn в российских компаниях"
+    },
+    {
+      "platform": "Telegram Communities",
+      "description": "Поиск менторов в Telegram-сообществах по облачной безопасности"
+    },
+    {
+      "platform": "Конференции",
+      "description": "Знакомство с менторами на конференциях и митапах"
+    }
+  ],
+  "learningResources": [
+    {
+      "name": "Яндекс.Облако Документация",
+      "link": "https://cloud.yandex.ru/docs",
+      "type": "Документация"
+    },
+    {
+      "name": "VK Cloud Solutions Документация",
+      "link": "https://mcs.mail.ru/docs/",
+      "type": "Документация"
+    },
+    {
+      "name": "Terraform Документация",
+      "link": "https://www.terraform.io/docs",
+      "type": "Документация"
+    },
+    {
+      "name": "Kubernetes Документация",
+      "link": "https://kubernetes.io/docs",
+      "type": "Документация"
+    }
+  ]
+}
+

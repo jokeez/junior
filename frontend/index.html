@@ -41,8 +41,8 @@
     <main class="main-content">
         <section class="hero">
             <div class="container">
-                <h1 class="hero-title">Добро пожаловать в платформу обучения кибербезопасности</h1>
-                <p class="hero-subtitle">Полный пошаговый план: теория + практика с видео-инструкциями</p>
+                <h1 class="hero-title">Добро пожаловать в платформу обучения Cloud Security Engineer</h1>
+                <p class="hero-subtitle">Полный пошаговый план на 24 месяца: теория + практика с видео-инструкциями. Фокус на российский стек: Яндекс.Облако и VK Cloud Solutions</p>
                 <div class="hero-stats">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
@@ -74,7 +74,7 @@
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
                         <h3>Детальный план</h3>
-                        <p>Полный план обучения на 240 дней с теорией и практикой</p>
+                        <p>Полный план обучения Cloud Security Engineer на 24 месяца с теорией и практикой. Фокус на российские облака: Яндекс.Облако и VK Cloud Solutions</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fas fa-tasks"></i></div>
@@ -149,9 +149,23 @@
             }, 100);
         });
     </script>
-    <script>
+        <script>
         // Загрузка статистики на главной странице
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Загрузка totalDays из roadmap.json
+            try {
+                const response = await fetch('data/roadmap.json');
+                if (response.ok) {
+                    const roadmap = await response.json();
+                    const totalDaysElement = document.getElementById('totalDays');
+                    if (totalDaysElement) {
+                        totalDaysElement.textContent = roadmap.totalDays || 267;
+                    }
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки roadmap.json:', error);
+            }
+            
             if (typeof ProgressTracker !== 'undefined') {
                 const stats = ProgressTracker.getStats();
                 document.getElementById('completedTasks').textContent = stats.completedTasks;
